@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowDown, Mail } from "lucide-react";
+import { ArrowDown, Mail, Download } from "lucide-react";
 import FadeIn from "./FadeIn";
 
 function GitHubIcon({ size = 22 }: { size?: number }) {
@@ -94,6 +94,14 @@ export default function Hero() {
               className="w-full sm:w-auto px-8 py-4 text-base font-semibold border border-[#374151] text-[#f9fafb] rounded-xl hover:border-[#f59e0b] hover:text-[#f59e0b] transition-all hover:scale-[1.02] active:scale-[0.98]"
             >
               Get In Touch
+            </a>
+            <a
+              href="/downloads/Ferdinand_Macagba_CV.pdf"
+              download
+              className="w-full sm:w-auto px-8 py-4 text-base font-semibold bg-[#1f2937] text-[#f9fafb] rounded-xl hover:bg-[#2dd4bf] hover:text-[#030712] transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2"
+            >
+              <Download size={18} />
+              Download CV
             </a>
           </div>
         </FadeIn>
