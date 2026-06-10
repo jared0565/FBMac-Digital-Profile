@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ferdinand Macagba — Digital Portfolio
 
-## Getting Started
+A modern, high-contrast, accessibility-first portfolio built with **Next.js 16**, **Tailwind CSS**, and **Framer Motion**. Deployed on **Cloudflare Pages**.
 
-First, run the development server:
+## Live Site
+
+**https://9815aa0b.fbmac-digital-profile.pages.dev**
+
+## What&#39;s Inside
+
+- **Hero** — Bold serif typography with animated background accents
+- **About** — Professional story with key stats (10+ years experience, 6 live projects, 6+ certifications)
+- **Services** — Web Development, Website Upgrade, Custom Application Development, AI Implementation
+- **Projects** — 6 deployed projects presented in executive card format with live links
+- **Experience** — Timeline of customer-focused operations and remote e-commerce management
+- **Education & Certifications** — BSc Engineering, AI diplomas, Google Cloud, Digital Marketing, Coding certificates
+- **Skills** — Categorized tech and business capabilities
+- **Contact** — Direct links to email, phone, LinkedIn, and website
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Framework | Next.js 16 (App Router, Static Export) |
+| Styling | Tailwind CSS v4 |
+| Animation | Framer Motion |
+| Icons | Lucide React + inline SVG |
+| Fonts | Inter (sans), Playfair Display (serif) via next/font |
+| Hosting | Cloudflare Pages |
+
+## Performance & Accessibility
+
+- Static export for sub-second load times
+- WCAG AA/AAA compliant contrast ratios
+- Semantic HTML with proper heading hierarchy
+- Focus-visible states for keyboard navigation
+- Mobile-first responsive design
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npx wrangler pages deploy dist --project-name fbmac-digital-profile
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2026 Ferdinand Macagba. All rights reserved.
