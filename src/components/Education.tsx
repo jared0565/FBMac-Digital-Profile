@@ -1,6 +1,7 @@
 "use client";
 
-import { GraduationCap, Award, Cloud, ExternalLink } from "lucide-react";
+import { GraduationCap, Award, Cloud } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import FadeIn from "./FadeIn";
 
 const educations = [
@@ -18,27 +19,43 @@ const educations = [
 const certifications = [
   {
     title: "Diploma in Applied Generative AI",
-    provider: "Alison Learning",
+    provider: "Alison",
     date: "April 2026",
     badge: "CPD Certified",
     icon: Award,
-    url: "https://alison.com/course/diploma-in-applied-generative-ai",
+    url: "https://alison.com/user/learner-verification/27668723/7213",
   },
   {
-    title: "Managing AI Governance in Organisations with ISO 42001",
-    provider: "Alison Learning",
+    title: "Managing AI Governance in Organizations With ISO 42001",
+    provider: "Alison",
     date: "April 2026",
     badge: null,
     icon: Award,
-    url: "https://alison.com/course/managing-ai-governance-in-organisations-with-iso-42001",
+    url: "https://alison.com/verify/a823eef71a",
   },
   {
     title: "Generative AI for Businesses",
-    provider: "Alison Learning",
+    provider: "Alison",
     date: "February 2026",
     badge: null,
     icon: Award,
-    url: "https://alison.com/course/generative-ai-for-businesses",
+    url: "https://alison.com/user/learner-verification/27668723/7216",
+  },
+  {
+    title: "Vibe Coding Basics",
+    provider: "Alison",
+    date: "April 2026",
+    badge: null,
+    icon: Award,
+    url: "https://alison.com/verify/68cf157aa1",
+  },
+  {
+    title: "Learn AI for Small Business Success",
+    provider: "Founderz",
+    date: "May 2026",
+    badge: null,
+    icon: Award,
+    url: "https://learn.founderz.com/certificate/learn-ai-for-small-business-success/807585a5-523d-438b-9128-f3e28850d1c7",
   },
   {
     title: "Google Cloud Fundamentals: Core Infrastructure",
@@ -49,28 +66,36 @@ const certifications = [
     url: "https://www.coursera.org/learn/gcp-fundamentals",
   },
   {
-    title: "The Fundamentals of Digital Marketing",
-    provider: "Google Digital Garage",
-    date: "June 2023",
-    badge: "IAB Endorsed",
-    icon: Award,
-    url: "https://learndigital.withgoogle.com/digitalgarage",
-  },
-  {
-    title: "Level 2 Certificate in Digital and IT Skills",
-    provider: "Gateway Qualifications",
-    date: "August 2023",
+    title: "Content Marketing",
+    provider: "HubSpot Academy",
+    date: "December 2025",
     badge: null,
     icon: Award,
-    url: "https://www.gatewayqualifications.org.uk/",
+    url: "https://app-eu1.hubspot.com/academy/achievements/8gw7grz6/en/1/ferdinand-macagba/content-marketing",
+  },
+  {
+    title: "Inbound",
+    provider: "HubSpot Academy",
+    date: "September 2023",
+    badge: null,
+    icon: Award,
+    url: "https://app-eu1.hubspot.com/academy/achievements/1z60sx82/en/1/ferdinand-macagba/inbound",
+  },
+  {
+    title: "Level 2 Certificate in Digital Promotion for Business",
+    provider: "NCFE",
+    date: "September 2024",
+    badge: null,
+    icon: Award,
+    url: "https://drive.google.com/file/d/10dNdPbBh3I1MtWrbOnPb_i0jDgWA3boa/view?usp=sharing",
   },
   {
     title: "Level 2 Certificate in Understanding Coding",
     provider: "NCFE",
-    date: "March 2023",
+    date: "May 2023",
     badge: null,
     icon: Award,
-    url: "https://www.ncfe.org.uk/",
+    url: "https://drive.google.com/file/d/1SGfdc9EA1VtMoK0EOWDQEcSUJozQ54cF/view?usp=sharing",
   },
 ];
 
@@ -116,7 +141,7 @@ export default function Education() {
                         <h4 className="text-lg font-bold text-[#f9fafb] mb-1">
                           {edu.title}
                         </h4>
-                        <ExternalLink className="w-4 h-4 text-[#6b7280] group-hover:text-[#f59e0b] transition-colors shrink-0 mt-1" />
+                        <ExternalLink className="w-4 h-4 text-[#9ca3af] group-hover:text-[#f59e0b] transition-colors shrink-0 mt-1" />
                       </div>
                       <p className="text-sm text-[#9ca3af] mb-2">
                         {edu.institution}
@@ -156,7 +181,7 @@ export default function Education() {
                           : "text-[#2dd4bf]"
                       }`}
                     />
-                    <ExternalLink className="w-4 h-4 text-[#6b7280] group-hover:text-[#9ca3af] transition-colors shrink-0" />
+                    <ExternalLink className="w-4 h-4 text-[#9ca3af] group-hover:text-[#9ca3af] transition-colors shrink-0" />
                   </div>
                   <h4 className="text-sm font-bold text-[#f9fafb] mb-1 leading-snug group-hover:text-[#f9fafb]">
                     {cert.title}
@@ -182,6 +207,20 @@ export default function Education() {
               </FadeIn>
             ))}
           </div>
+
+          <FadeIn delay={0.3}>
+            <div className="mt-8 text-center">
+              <a
+                href="https://www.linkedin.com/in/fbmacagba/details/certifications/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#111827] border border-[#374151]/50 text-[#9ca3af] hover:text-[#f59e0b] hover:border-[#f59e0b]/40 transition-all"
+              >
+                <ExternalLink className="w-4 h-4" />
+                <span className="text-sm font-medium">View all 19 certifications on LinkedIn</span>
+              </a>
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>
