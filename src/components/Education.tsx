@@ -153,7 +153,7 @@ export default function Education() {
                   <p className="text-xs text-[#9ca3af]">
                     {cert.provider}
                   </p>
-                  <p className="text-xs text-[#6b7280] mt-1">{cert.date}</p>
+                  <p className="text-xs text-[#9ca3af] mt-1">{cert.date}</p>
                 </div>
               </FadeIn>
             ))}

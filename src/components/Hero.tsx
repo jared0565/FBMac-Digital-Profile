@@ -130,7 +130,7 @@ export default function Hero() {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <a href="#about" className="text-[#9ca3af] hover:text-[#f59e0b] transition-colors">
+        <a href="#about" aria-label="Scroll to About section" className="text-[#9ca3af] hover:text-[#f59e0b] transition-colors">
           <ArrowDown size={24} />
         </a>
       </div>
