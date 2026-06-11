@@ -12,7 +12,7 @@ const educations = [
     year: "1987",
     note: "UK Equivalent: Foundation Degree / HND Level (UK ENIC Statement of Comparability, April 2023)",
     icon: GraduationCap,
-    url: "https://www.slu.edu/",
+    url: "https://drive.google.com/file/d/1kPsz7hihGQyMzdkBeJ2T6eYPvIoY9hy0/view",
   },
 ];
 
@@ -23,7 +23,7 @@ const certifications = [
     date: "April 2026",
     badge: "CPD Certified",
     icon: Award,
-    url: "https://alison.com/user/learner-verification/27668723/7213",
+    url: "https://drive.google.com/file/d/1nptl9KVNc9o-oQWhrrqIj9txvrjLKG86/view",
   },
   {
     title: "Managing AI Governance in Organizations With ISO 42001",
@@ -31,7 +31,7 @@ const certifications = [
     date: "April 2026",
     badge: null,
     icon: Award,
-    url: "https://alison.com/verify/a823eef71a",
+    url: "https://drive.google.com/file/d/1FqJVlzT9l7LW7vbJtDQaW3t8TZEDonFP/view",
   },
   {
     title: "Generative AI for Businesses",
@@ -39,7 +39,7 @@ const certifications = [
     date: "February 2026",
     badge: null,
     icon: Award,
-    url: "https://alison.com/user/learner-verification/27668723/7216",
+    url: "https://drive.google.com/file/d/1Ezee1KiPzzkyjw_YIfANNXivl2M3iIay/view",
   },
   {
     title: "Vibe Coding Basics",
@@ -47,7 +47,7 @@ const certifications = [
     date: "April 2026",
     badge: null,
     icon: Award,
-    url: "https://alison.com/verify/68cf157aa1",
+    url: "https://drive.google.com/file/d/1zfhi-ddr15MdIlZUVFHT6I5c2ote8Wus/view",
   },
   {
     title: "Learn AI for Small Business Success",
@@ -56,14 +56,6 @@ const certifications = [
     badge: null,
     icon: Award,
     url: "https://learn.founderz.com/certificate/learn-ai-for-small-business-success/807585a5-523d-438b-9128-f3e28850d1c7",
-  },
-  {
-    title: "Google Cloud Fundamentals: Core Infrastructure",
-    provider: "Google Cloud / Coursera",
-    date: "In Progress",
-    badge: "Current",
-    icon: Cloud,
-    url: "https://www.coursera.org/learn/gcp-fundamentals",
   },
   {
     title: "Content Marketing",
@@ -97,11 +89,19 @@ const certifications = [
     icon: Award,
     url: "https://drive.google.com/file/d/1SGfdc9EA1VtMoK0EOWDQEcSUJozQ54cF/view?usp=sharing",
   },
+  {
+    title: "Google Cloud Fundamentals: Core Infrastructure",
+    provider: "Google Cloud / Coursera",
+    date: "In Progress",
+    badge: "Current",
+    icon: Cloud,
+    url: "https://www.coursera.org/learn/gcp-fundamentals",
+  },
 ];
 
 export default function Education() {
   return (
-    <section className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#030712]">
+    <section id="education" className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#030712]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <FadeIn>
