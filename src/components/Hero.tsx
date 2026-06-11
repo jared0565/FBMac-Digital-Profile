@@ -44,7 +44,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-28 sm:pt-24 md:pt-0"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-[#030712] via-[#030712] to-[#111827]">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#f59e0b]/5 rounded-full blur-3xl"></div>
