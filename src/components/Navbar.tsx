@@ -37,7 +37,7 @@ export default function Navbar() {
             href="#"
             className="font-[family-name:var(--font-playfair)] text-xl md:text-2xl font-bold text-[#f9fafb] tracking-tight hover:text-[#f59e0b] transition-colors"
           >
-            FBMac
+            FBMacagba
           </a>
 
           <nav className="hidden md:flex items-center gap-1">

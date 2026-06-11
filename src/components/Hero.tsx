@@ -53,27 +53,18 @@ export default function Hero() {
 
       <div className="relative max-w-5xl mx-auto text-center">
         <FadeIn delay={0}>
-          <p className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f59e0b]/10 border border-[#f59e0b]/20 text-[#f59e0b] text-sm font-medium mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#f59e0b] animate-pulse"></span>
-            Available for Projects
-          </p>
-        </FadeIn>
-
-        <FadeIn delay={0.1}>
-          <h1 className="font-[family-name:var(--font-playfair)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-[#f9fafb] tracking-tight leading-[1.1] mb-6">
-            Ferdinand
-            <br />
-            <span className="text-[#f59e0b]">Macagba</span>
+          <h1 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#f9fafb] tracking-tight leading-[1.1] mb-6 whitespace-nowrap">
+            Ferdinand <span className="text-[#f59e0b]">Macagba</span>
           </h1>
         </FadeIn>
 
-        <FadeIn delay={0.2}>
+        <FadeIn delay={0.1}>
           <p className="text-xl sm:text-2xl md:text-3xl text-[#9ca3af] font-light mb-4">
             Digital Transformation Specialist &amp; Web Developer
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.3}>
+        <FadeIn delay={0.2}>
           <p className="max-w-2xl mx-auto text-base sm:text-lg text-[#9ca3af] leading-relaxed mb-10">
             10+ years of customer-focused operations, now building modern web
             applications and AI-enabled tools that help small businesses grow.
@@ -81,7 +72,7 @@ export default function Hero() {
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.4}>
+        <FadeIn delay={0.3}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <a
               href="#projects"
@@ -106,7 +97,7 @@ export default function Hero() {
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.5}>
+        <FadeIn delay={0.4}>
           <div className="flex items-center justify-center gap-6">
             <a
               href="https://github.com/jared0565"
