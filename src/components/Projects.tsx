@@ -24,7 +24,7 @@ function CodeIcon({ size = 16 }: { size?: number }) {
 const projects = [
   {
     name: "BytesAI Learn",
-    url: "https://learn.bytesai.co.uk",
+    url: "https://learn.bytesai.uk/",
     github: null,
     tagline: "Free AI Courses Membership Platform",
     description:
