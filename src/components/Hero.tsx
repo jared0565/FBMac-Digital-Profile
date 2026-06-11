@@ -59,15 +59,21 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <p className="text-xl sm:text-2xl md:text-3xl text-[#9ca3af] font-light mb-4">
-            Digital Transformation Specialist &amp; Web Developer
+          <p className="text-xl sm:text-2xl md:text-3xl text-[#f9fafb] font-light mb-2">
+            AI-Assisted Application Developer and Digital Product Builder
+          </p>
+        </FadeIn>
+
+        <FadeIn delay={0.15}>
+          <p className="text-base sm:text-lg text-[#f59e0b] font-medium tracking-wide mb-6">
+            Digital Products, E-commerce and Responsible AI
           </p>
         </FadeIn>
 
         <FadeIn delay={0.2}>
           <p className="max-w-2xl mx-auto text-base sm:text-lg text-[#9ca3af] leading-relaxed mb-10">
-            10+ years of customer-focused operations, now building modern web
-            applications and AI-enabled tools that help small businesses grow.
+            I research the problem, define requirements, specify the workflow and
+            direct every revision — AI assists implementation, I own the product.
             Based in London, UK.
           </p>
         </FadeIn>
@@ -75,24 +81,24 @@ export default function Hero() {
         <FadeIn delay={0.3}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <a
+              href="/downloads/Ferdinand_Macagba_CV.pdf"
+              download
+              className="w-full sm:w-auto px-8 py-4 text-base font-semibold bg-[#f59e0b] text-[#030712] rounded-xl hover:bg-[#fbbf24] transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2"
+            >
+              <Download size={18} />
+              Download CV
+            </a>
+            <a
               href="#projects"
-              className="w-full sm:w-auto px-8 py-4 text-base font-semibold bg-[#f59e0b] text-[#030712] rounded-xl hover:bg-[#fbbf24] transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full sm:w-auto px-8 py-4 text-base font-semibold border border-[#374151] text-[#f9fafb] rounded-xl hover:border-[#f59e0b] hover:text-[#f59e0b] transition-all hover:scale-[1.02] active:scale-[0.98]"
             >
               View My Work
             </a>
             <a
               href="#contact"
-              className="w-full sm:w-auto px-8 py-4 text-base font-semibold border border-[#374151] text-[#f9fafb] rounded-xl hover:border-[#f59e0b] hover:text-[#f59e0b] transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full sm:w-auto px-8 py-4 text-base font-semibold bg-[#1f2937] text-[#f9fafb] rounded-xl hover:bg-[#374151] transition-all hover:scale-[1.02] active:scale-[0.98]"
             >
               Get In Touch
-            </a>
-            <a
-              href="/downloads/Ferdinand_Macagba_CV.pdf"
-              download
-              className="w-full sm:w-auto px-8 py-4 text-base font-semibold bg-[#1f2937] text-[#f9fafb] rounded-xl hover:bg-[#2dd4bf] hover:text-[#030712] transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2"
-            >
-              <Download size={18} />
-              Download CV
             </a>
           </div>
         </FadeIn>

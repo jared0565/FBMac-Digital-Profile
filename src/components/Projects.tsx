@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, TrendingUp, Users, ShoppingCart, Scissors, Gamepad2, Hash } from "lucide-react";
+import { ExternalLink, TrendingUp, Users, ShoppingCart, Scissors, Gamepad2, Hash, ArrowRight } from "lucide-react";
 import FadeIn from "./FadeIn";
 
 function CodeIcon({ size = 16 }: { size?: number }) {
@@ -20,6 +20,31 @@ function CodeIcon({ size = 16 }: { size?: number }) {
     </svg>
   );
 }
+
+const featuredProjects = [
+  {
+    name: "BytesCRM",
+    url: "https://bytescrm.app",
+    tagline: "LeadGen & CRM Multi-Tenant Platform",
+    color: "#2dd4bf",
+    icon: Users,
+    problem: "Agencies managing leads across scattered spreadsheets and disconnected tools — no single source of truth, no automation.",
+    solution: "Centralised multi-tenant CRM with 5 data types (contacts, leads, deals, subscribers, tasks), admin dashboards, automation workflows, and billing.",
+    technical: ["Multi-tenant architecture", "Next.js + Node.js", "Role-based access control", "Per-tenant data isolation"],
+    decision: "Chose multi-tenant with hard data isolation over single-tenant to support agency resellers — a product decision made before a line of code was written.",
+  },
+  {
+    name: "Pivot Parlor",
+    url: "https://pivotparlor.com",
+    tagline: "Smart Booking for Beauty & Barber Shops",
+    color: "#a78bfa",
+    icon: Scissors,
+    problem: "Independent salons need online booking but subscription SaaS is too expensive — Fresha takes commission, Booksy charges monthly fees.",
+    solution: "Commission-only booking platform: £100 one-time setup, 10% commission on completed bookings only. AI generates branded booking pages per partner.",
+    technical: ["Multi-tenant booking engine", "AI-generated pages (with human review gate)", "SMS + email reminders", "Waitlists + QR booking links"],
+    decision: "Commercial model (£100 + 10% commission) was a product decision based on market research — not a default SaaS pricing template.",
+  },
+];
 
 const projects = [
   {
@@ -103,6 +128,7 @@ export default function Projects() {
       className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#030712]"
     >
       <div className="max-w-7xl mx-auto">
+        {/* Header */}
         <div className="text-center mb-16">
           <FadeIn>
             <p className="text-[#f59e0b] text-sm font-semibold tracking-widest uppercase mb-4">
@@ -116,11 +142,98 @@ export default function Projects() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="max-w-2xl mx-auto text-[#9ca3af] text-lg">
-              Real applications deployed and used by real people. Each one solves a
-              specific business problem.
+              Human-led, AI-assisted applications built through structured
+              requirements, workflow design and iterative development.
             </p>
           </FadeIn>
         </div>
+
+        {/* Featured Case Studies */}
+        <FadeIn>
+          <h3 className="text-lg font-bold text-[#f9fafb] mb-6 flex items-center gap-2">
+            <span className="w-6 h-0.5 bg-[#f59e0b]"></span>
+            Case Studies
+          </h3>
+        </FadeIn>
+
+        <div className="grid lg:grid-cols-2 gap-6 mb-16">
+          {featuredProjects.map((project, index) => (
+            <FadeIn key={project.name} delay={0.1 * index}>
+              <article
+                className="group rounded-2xl bg-[#111827] border transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col"
+                style={{ borderColor: `${project.color}30` }}
+              >
+                {/* Card header */}
+                <div className="p-6 border-b" style={{ borderColor: `${project.color}20` }}>
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-3">
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center"
+                        style={{ backgroundColor: `${project.color}15` }}
+                      >
+                        <project.icon className="w-5 h-5" style={{ color: project.color }} />
+                      </div>
+                      <div>
+                        <h4 className="text-base font-bold text-[#f9fafb]">{project.name}</h4>
+                        <p className="text-xs font-medium" style={{ color: project.color }}>{project.tagline}</p>
+                      </div>
+                    </div>
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-lg bg-[#1f2937] text-[#9ca3af] hover:text-[#f59e0b] transition-colors"
+                      aria-label={`Visit ${project.name}`}
+                    >
+                      <ExternalLink size={15} />
+                    </a>
+                  </div>
+                </div>
+
+                {/* Card body */}
+                <div className="p-6 flex-1 space-y-4">
+                  <div>
+                    <p className="text-xs font-semibold text-[#9ca3af]/60 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-sm text-[#9ca3af] leading-relaxed">{project.problem}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-[#9ca3af]/60 uppercase tracking-wide mb-1">Solution</p>
+                    <p className="text-sm text-[#9ca3af] leading-relaxed">{project.solution}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-[#9ca3af]/60 uppercase tracking-wide mb-2">Technical highlights</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technical.map((item) => (
+                        <span
+                          key={item}
+                          className="px-2.5 py-1 text-xs font-medium text-[#9ca3af] bg-[#1f2937] rounded-full border border-[#374151]/50"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Key decision footer */}
+                <div className="px-6 py-4 bg-[#0f172a] border-t border-[#374151]/30">
+                  <div className="flex items-start gap-2">
+                    <ArrowRight className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: project.color }} />
+                    <p className="text-xs text-[#9ca3af] italic leading-relaxed">{project.decision}</p>
+                  </div>
+                </div>
+              </article>
+            </FadeIn>
+          ))}
+        </div>
+
+        {/* All Projects */}
+        <FadeIn>
+          <h3 className="text-lg font-bold text-[#f9fafb] mb-6 flex items-center gap-2">
+            <span className="w-6 h-0.5 bg-[#f59e0b]"></span>
+            All Projects
+          </h3>
+        </FadeIn>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (

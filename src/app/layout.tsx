@@ -15,33 +15,33 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Ferdinand Macagba | Digital Transformation & Web Development",
+  title: "Ferdinand Macagba | AI-Assisted Application Developer",
   description:
-    "Portfolio of Ferdinand Macagba — Web Developer, AI Implementer, and Digital Transformation Specialist building modern web applications and SaaS platforms.",
+    "Human-led, AI-assisted application developer specialising in SaaS, e-commerce and responsible AI. 6 live projects. Based in London, UK.",
   keywords: [
     "Ferdinand Macagba",
-    "Web Developer",
-    "AI Implementation",
-    "Digital Transformation",
+    "AI-Assisted Application Developer",
+    "SaaS Developer",
+    "Responsible AI",
     "Next.js",
     "React",
     "TypeScript",
-    "Cloud",
+    "Shopify",
     "London",
   ],
   authors: [{ name: "Ferdinand Macagba" }],
   openGraph: {
-    title: "Ferdinand Macagba | Digital Transformation & Web Development",
+    title: "Ferdinand Macagba | AI-Assisted Application Developer",
     description:
-      "Building modern web applications, SaaS platforms, and AI-enabled tools for businesses.",
+      "Human-led, AI-assisted application developer specialising in SaaS, e-commerce and responsible AI. 6 live projects. Based in London, UK.",
     type: "website",
     locale: "en_GB",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ferdinand Macagba | Digital Transformation & Web Development",
+    title: "Ferdinand Macagba | AI-Assisted Application Developer",
     description:
-      "Building modern web applications, SaaS platforms, and AI-enabled tools for businesses.",
+      "Human-led, AI-assisted application developer specialising in SaaS, e-commerce and responsible AI. 6 live projects. Based in London, UK.",
   },
 };
 

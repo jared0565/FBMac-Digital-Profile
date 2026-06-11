@@ -6,7 +6,7 @@ import FadeIn from "./FadeIn";
 const stats = [
   { icon: Briefcase, value: "10+", label: "Years Client Experience" },
   { icon: Calendar, value: "6", label: "Live Projects Deployed" },
-  { icon: Award, value: "6+", label: "Tech Certifications" },
+  { icon: Award, value: "10+", label: "Tech Certifications" },
   { icon: MapPin, value: "London", label: "Based in UK" },
 ];
 
@@ -26,34 +26,37 @@ export default function About() {
             </FadeIn>
             <FadeIn delay={0.1}>
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-[#f9fafb] mb-6 leading-tight">
-                From Hospitality Operations to Digital Innovation
+                From Operations to AI-Assisted Application Development
               </h2>
             </FadeIn>
             <FadeIn delay={0.2}>
               <div className="space-y-4 text-[#9ca3af] text-base sm:text-lg leading-relaxed">
                 <p>
-                  I spent over a decade building genuine relationships in
-                  hospitality and remote operations — managing e-commerce
-                  fulfilment, resolving complex customer issues, and coordinating
-                  across multiple teams and suppliers.
+                  I spent over a decade in hospitality and remote operations —
+                  managing e-commerce fulfilment, coordinating distributed teams,
+                  and solving real business problems under pressure. That career
+                  taught me what organisations actually need from software: tools
+                  that work reliably, workflows that reduce friction, and systems
+                  built for the people who use them daily.
                 </p>
                 <p>
-                  That experience taught me what businesses actually need: tools
-                  that work reliably, interfaces that feel intuitive, and systems
-                  that save time. Today, I channel that operational expertise into
-                  building modern web applications and AI-enabled platforms.
+                  Since 2023, I have been building production applications using a
+                  structured, human-led process: I research the problem, define
+                  requirements, design the workflow, and specify every decision —
+                  AI assists implementation, I own the product. This means every
+                  application starts with a PRD, progresses through defined stages,
+                  and ships only after review, testing, and iteration.
                 </p>
                 <p>
-                  I am passionate about digital transformation for small
-                  businesses — helping them compete with better technology, smarter
-                  automation, and clearer digital presence. My engineering
-                  background (BSc Electronics and Communications Engineering)
-                  gives me the technical foundation; my customer-facing career
-                  gives me the practical focus.
+                  I take responsible AI seriously as engineering discipline.
+                  Every application I build applies input validation, human
+                  approval gates, output verification, and least-privilege
+                  permission controls. I hold a certification in Managing AI
+                  Governance with ISO 42001 and a Diploma in Applied Generative AI.
                 </p>
                 <p className="text-[#f9fafb] font-medium">
-                  Currently studying: Google Cloud Fundamentals: Core
-                  Infrastructure.
+                  Current focus: SaaS platforms, e-commerce and AI-enabled
+                  applications — built for real users and real business problems.
                 </p>
               </div>
             </FadeIn>

@@ -16,15 +16,7 @@ const educations = [
   },
 ];
 
-const certifications = [
-  {
-    title: "Diploma in Applied Generative AI",
-    provider: "Alison",
-    date: "April 2026",
-    badge: "CPD Certified",
-    icon: Award,
-    url: "https://drive.google.com/file/d/1nptl9KVNc9o-oQWhrrqIj9txvrjLKG86/view",
-  },
+const featuredCerts = [
   {
     title: "Managing AI Governance in Organizations With ISO 42001",
     provider: "Alison",
@@ -34,6 +26,14 @@ const certifications = [
     url: "https://drive.google.com/file/d/1FqJVlzT9l7LW7vbJtDQaW3t8TZEDonFP/view",
   },
   {
+    title: "Diploma in Applied Generative AI",
+    provider: "Alison",
+    date: "April 2026",
+    badge: "CPD Certified",
+    icon: Award,
+    url: "https://drive.google.com/file/d/1nptl9KVNc9o-oQWhrrqIj9txvrjLKG86/view",
+  },
+  {
     title: "Generative AI for Businesses",
     provider: "Alison",
     date: "February 2026",
@@ -41,14 +41,9 @@ const certifications = [
     icon: Award,
     url: "https://drive.google.com/file/d/1Ezee1KiPzzkyjw_YIfANNXivl2M3iIay/view",
   },
-  {
-    title: "Vibe Coding Basics",
-    provider: "Alison",
-    date: "April 2026",
-    badge: "CPD Certified",
-    icon: Award,
-    url: "https://drive.google.com/file/d/1zfhi-ddr15MdIlZUVFHT6I5c2ote8Wus/view",
-  },
+];
+
+const certifications = [
   {
     title: "Learn AI for Small Business Success",
     provider: "Founderz",
@@ -88,6 +83,14 @@ const certifications = [
     badge: null,
     icon: Award,
     url: "https://drive.google.com/file/d/1SGfdc9EA1VtMoK0EOWDQEcSUJozQ54cF/view?usp=sharing",
+  },
+  {
+    title: "Vibe Coding Basics",
+    provider: "Alison",
+    date: "April 2026",
+    badge: null,
+    icon: Award,
+    url: "https://drive.google.com/file/d/1zfhi-ddr15MdIlZUVFHT6I5c2ote8Wus/view",
   },
   {
     title: "Google Cloud Fundamentals: Core Infrastructure",
@@ -164,6 +167,39 @@ export default function Education() {
               Certifications
             </h3>
           </FadeIn>
+
+          {/* Featured AI certifications */}
+          <div className="grid sm:grid-cols-3 gap-4 mb-8">
+            {featuredCerts.map((cert, index) => (
+              <FadeIn key={cert.title} delay={0.05 * index}>
+                <a
+                  href={cert.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block p-5 rounded-xl bg-[#111827] border border-[#2dd4bf]/30 hover:border-[#2dd4bf]/60 transition-all"
+                >
+                  <div className="flex items-start justify-between mb-2">
+                    <cert.icon className="w-5 h-5 text-[#2dd4bf]" />
+                    <ExternalLink className="w-4 h-4 text-[#9ca3af] group-hover:text-[#2dd4bf] transition-colors shrink-0" />
+                  </div>
+                  <h4 className="text-sm font-bold text-[#f9fafb] mb-1 leading-snug">
+                    {cert.title}
+                  </h4>
+                  <p className="text-xs text-[#9ca3af]">{cert.provider}</p>
+                  <div className="flex items-center justify-between mt-1">
+                    <p className="text-xs text-[#9ca3af]">{cert.date}</p>
+                    {cert.badge && (
+                      <span className="px-2 py-0.5 text-[10px] font-bold uppercase rounded-full bg-[#2dd4bf]/10 text-[#2dd4bf]">
+                        {cert.badge}
+                      </span>
+                    )}
+                  </div>
+                </a>
+              </FadeIn>
+            ))}
+          </div>
+
+          {/* Secondary certifications */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {certifications.map((cert, index) => (
               <FadeIn key={cert.title} delay={0.05 * index}>
@@ -178,7 +214,7 @@ export default function Education() {
                       className={`w-5 h-5 ${
                         cert.badge === "Current"
                           ? "text-[#f59e0b]"
-                          : "text-[#2dd4bf]"
+                          : "text-[#9ca3af]"
                       }`}
                     />
                     <ExternalLink className="w-4 h-4 text-[#9ca3af] group-hover:text-[#9ca3af] transition-colors shrink-0" />

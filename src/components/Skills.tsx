@@ -2,62 +2,80 @@
 
 import FadeIn from "./FadeIn";
 
-const skillCategories = [
+const technicalSkills = [
   {
-    name: "Frontend",
-    skills: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "HTML5 / CSS3",
-      "Responsive Design",
-      "Accessibility (a11y)",
-    ],
+    name: "Application Development",
+    skills: ["Next.js", "React", "TypeScript", "Node.js", "REST APIs", "Tailwind CSS"],
   },
   {
-    name: "Backend & Database",
-    skills: [
-      "Node.js",
-      "REST APIs",
-      "SQLite",
-      "Database Design",
-      "Cloud Functions",
-    ],
+    name: "Data & Storage",
+    skills: ["SQLite", "Database Design", "Cloud Functions (Cloudflare Workers)"],
   },
   {
-    name: "Platforms & Tools",
-    skills: [
-      "Shopify",
-      "GitHub",
-      "Google Workspace",
-      "Microsoft Office",
-      "Cloudflare",
-      "Wrangler",
-    ],
+    name: "Platforms",
+    skills: ["Shopify (Custom Themes)", "GitHub", "Cloudflare", "Google Cloud Platform (learning)"],
   },
   {
-    name: "AI & Emerging Tech",
-    skills: [
-      "Generative AI",
-      "AI Governance (ISO 42001)",
-      "Google Cloud Platform",
-      "Prompt Engineering",
-      "AI Integration",
-    ],
-  },
-  {
-    name: "Operations & Business",
-    skills: [
-      "E-commerce Operations",
-      "CRM Systems",
-      "Customer Relations",
-      "Process Automation",
-      "Digital Marketing",
-      "Remote Team Management",
-    ],
+    name: "AI & Tooling",
+    skills: ["Generative AI Integration", "Structured Prompting", "AI Governance (ISO 42001)", "Prompt Injection Awareness"],
   },
 ];
+
+const professionalSkills = [
+  {
+    name: "Product Development",
+    skills: ["Requirements Definition", "PRD Development", "Workflow Design", "MVP Scoping", "Feature Prioritisation"],
+  },
+  {
+    name: "Responsible AI",
+    skills: ["Input Validation", "Human Approval Gates", "Output Verification", "Context Engineering", "Hallucination Awareness"],
+  },
+  {
+    name: "Operations & Commercial",
+    skills: ["E-commerce Operations", "CRM Systems", "Customer Relations", "Remote Team Management", "ROI Assessment", "Process Improvement"],
+  },
+  {
+    name: "Currently Learning",
+    skills: ["Google Cloud Fundamentals: Core Infrastructure"],
+  },
+];
+
+function SkillColumn({ title, categories, accentColor }: {
+  title: string;
+  categories: { name: string; skills: string[] }[];
+  accentColor: string;
+}) {
+  return (
+    <div>
+      <FadeIn>
+        <h3 className="text-xl font-bold text-[#f9fafb] mb-6 pb-3 border-b border-[#374151]/50">
+          {title}
+        </h3>
+      </FadeIn>
+      <div className="space-y-4">
+        {categories.map((category, index) => (
+          <FadeIn key={category.name} delay={0.05 * index}>
+            <div className="p-5 rounded-xl bg-[#1f2937] border border-[#374151]/50">
+              <h4 className={`text-sm font-semibold uppercase tracking-wide mb-3 ${accentColor}`}>
+                {category.name}
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1.5 text-sm font-medium text-[#9ca3af] bg-[#111827] rounded-lg border border-[#374151]/50 hover:text-[#f59e0b] hover:border-[#f59e0b]/30 transition-colors cursor-default"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Skills() {
   return (
@@ -76,32 +94,23 @@ export default function Skills() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="max-w-2xl mx-auto text-[#9ca3af] text-lg">
-              A blend of modern web development, AI capabilities, and
-              business operations expertise.
+              Technical depth combined with product and operations expertise —
+              the full stack for building and shipping real applications.
             </p>
           </FadeIn>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category, index) => (
-            <FadeIn key={category.name} delay={0.1 * index}>
-              <div className="p-6 rounded-2xl bg-[#1f2937] border border-[#374151]/50">
-                <h3 className="text-lg font-bold text-[#f9fafb] mb-4 pb-3 border-b border-[#374151]/50">
-                  {category.name}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1.5 text-sm font-medium text-[#9ca3af] bg-[#111827] rounded-lg border border-[#374151]/50 hover:text-[#f59e0b] hover:border-[#f59e0b]/30 transition-colors cursor-default"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-          ))}
+        <div className="grid lg:grid-cols-2 gap-10">
+          <SkillColumn
+            title="Technical Skills"
+            categories={technicalSkills}
+            accentColor="text-[#f59e0b]"
+          />
+          <SkillColumn
+            title="Professional Skills"
+            categories={professionalSkills}
+            accentColor="text-[#2dd4bf]"
+          />
         </div>
       </div>
     </section>

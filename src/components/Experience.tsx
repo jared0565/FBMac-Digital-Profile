@@ -4,6 +4,18 @@ import FadeIn from "./FadeIn";
 
 const experiences = [
   {
+    role: "AI-Assisted Application Developer (Independent Projects)",
+    company: "Self-directed",
+    location: "London, UK",
+    period: "2023 – Present",
+    highlights: [
+      "Developed 6 live applications across SaaS, e-commerce, EdTech and games using a human-led, AI-assisted development workflow",
+      "Responsible for all product decisions: research, requirements, workflow design, architecture, testing, iteration and release",
+      "Applied responsible-AI principles throughout: input validation, human approval gates, output verification, and permission controls",
+      "Used structured context engineering and version control to maintain continuity across development sessions",
+    ],
+  },
+  {
     role: "Remote Operations Manager / E-Commerce Specialist",
     company: "Bytes Enterprises Ltd",
     location: "London",
