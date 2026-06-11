@@ -25,10 +25,11 @@ export default function Navbar() {
   }, []);
 
   return (
+    <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#030712]/90 backdrop-blur-xl border-b border-[#374151]/50"
+        scrolled || isOpen
+          ? "bg-[#030712]/95 backdrop-blur-xl border-b border-[#374151]/50"
           : "bg-transparent"
       }`}
     >
@@ -68,16 +69,18 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+    </header>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#111827]/95 backdrop-blur-xl border-b border-[#374151]/50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-[#030712] border-t border-[#374151]/50 overflow-y-auto"
           >
-            <nav className="flex flex-col px-4 py-4 gap-1">
+            <nav className="flex flex-col px-4 py-6 gap-1">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -99,6 +102,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }

@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "fbmac-digital-profile",
+  "compatibility_date": "2026-06-10",
+  // Static-export site (next.config.ts uses `output: "export"`).
+  // Serve the pre-built ./dist directory as Workers Static Assets.
+  // No `main` is set on purpose: this is an assets-only Worker, so Wrangler
+  // will NOT auto-detect Next.js and try to run the OpenNext SSR adapter.
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}

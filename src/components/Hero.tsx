@@ -53,7 +53,7 @@ export default function Hero() {
 
       <div className="relative max-w-5xl mx-auto text-center">
         <FadeIn delay={0}>
-          <h1 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#f9fafb] tracking-tight leading-[1.1] mb-6 whitespace-nowrap">
+          <h1 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#f9fafb] tracking-tight leading-[1.1] mb-6">
             Ferdinand <span className="text-[#f59e0b]">Macagba</span>
           </h1>
         </FadeIn>
