@@ -4,8 +4,15 @@ import FadeIn from "./FadeIn";
 
 const technicalSkills = [
   {
-    name: "Application Development",
-    skills: ["Next.js", "React", "TypeScript", "Node.js", "REST APIs", "Tailwind CSS"],
+    name: "AI-Assisted Development Stack",
+    skills: [
+      "Next.js / React project direction",
+      "TypeScript-based app workflows",
+      "Node.js / API feature planning",
+      "REST API integration concepts",
+      "Tailwind CSS UI iteration",
+      "AI-assisted debugging and review",
+    ],
   },
   {
     name: "Data & Storage",
@@ -94,15 +101,16 @@ export default function Skills() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="max-w-2xl mx-auto text-[#9ca3af] text-lg">
-              Technical depth combined with product and operations expertise —
-              the full stack for building and shipping real applications.
+              AI-assisted delivery combined with product and operations
+              expertise — the practical toolkit for directing, reviewing and
+              shipping real applications.
             </p>
           </FadeIn>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-10">
           <SkillColumn
-            title="Technical Skills"
+            title="AI-Assisted Technical Toolkit"
             categories={technicalSkills}
             accentColor="text-[#f59e0b]"
           />
