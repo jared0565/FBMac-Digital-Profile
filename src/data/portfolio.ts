@@ -90,7 +90,7 @@ export const featuredProjects: FeaturedProject[] = [
     name: "BytesCRM",
     url: "https://bytescrm.app",
     tagline: "LeadGen & CRM Multi-Tenant Platform",
-    color: "#2dd4bf",
+    color: "#6bc7c4",
     icon: Users,
     problem:
       "Agencies managing leads across scattered spreadsheets and disconnected tools — no single source of truth, no automation.",
@@ -125,7 +125,6 @@ export const featuredProjects: FeaturedProject[] = [
       "Commercial model (£100 + 10% commission) was a product decision based on market research — not a default SaaS pricing template.",
   },
 ];
-
 export const projects: Project[] = [
   {
     name: "BytesAI Learn",
@@ -137,7 +136,7 @@ export const projects: Project[] = [
     icon: TrendingUp,
     tags: ["Next.js", "Membership", "EdTech", "AI"],
     metrics: ["Membership Model", "Course Progression"],
-    color: "#f59e0b",
+    color: "#c9a45e",
   },
   {
     name: "BytesCRM",
@@ -149,7 +148,7 @@ export const projects: Project[] = [
     icon: Users,
     tags: ["Multi-tenant", "CRM", "SaaS", "Dashboard"],
     metrics: ["5 Data Types", "Automation Engine"],
-    color: "#2dd4bf",
+    color: "#6bc7c4",
   },
   {
     name: "Active Paw",

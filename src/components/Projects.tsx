@@ -26,23 +26,23 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#030712]"
+      className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#07090d]"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <FadeIn>
-            <p className="text-[#f59e0b] text-sm font-semibold tracking-widest uppercase mb-4">
+            <p className="text-[#c9a45e] text-sm font-semibold tracking-normal mb-4">
               Portfolio
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-[#f9fafb] mb-4">
+            <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-[#f4efe6] mb-4">
               Featured Projects
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <p className="max-w-2xl mx-auto text-[#9ca3af] text-lg">
+            <p className="max-w-2xl mx-auto text-[#b8c0cc] text-lg">
               Human-led, AI-assisted applications built through structured
               requirements, workflow design and iterative development.
             </p>
@@ -51,8 +51,8 @@ export default function Projects() {
 
         {/* Featured Case Studies */}
         <FadeIn>
-          <h3 className="text-lg font-bold text-[#f9fafb] mb-6 flex items-center gap-2">
-            <span className="w-6 h-0.5 bg-[#f59e0b]"></span>
+          <h3 className="text-lg font-bold text-[#f4efe6] mb-6 flex items-center gap-2">
+            <span className="w-6 h-0.5 bg-[#c9a45e]"></span>
             Case Studies
           </h3>
         </FadeIn>
@@ -61,7 +61,7 @@ export default function Projects() {
           {featuredProjects.map((project, index) => (
             <FadeIn key={project.name} delay={0.1 * index}>
               <article
-                className="group rounded-2xl bg-[#111827] border transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col"
+                className="group rounded-lg bg-[#10151d] border transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col"
                 style={{ borderColor: `${project.color}30` }}
               >
                 {/* Card header */}
@@ -69,13 +69,13 @@ export default function Projects() {
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3">
                       <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center"
+                        className="w-10 h-10 rounded-lg flex items-center justify-center"
                         style={{ backgroundColor: `${project.color}15` }}
                       >
                         <project.icon className="w-5 h-5" style={{ color: project.color }} />
                       </div>
                       <div>
-                        <h4 className="text-base font-bold text-[#f9fafb]">{project.name}</h4>
+                        <h4 className="text-base font-bold text-[#f4efe6]">{project.name}</h4>
                         <p className="text-xs font-medium" style={{ color: project.color }}>{project.tagline}</p>
                       </div>
                     </div>
@@ -83,7 +83,7 @@ export default function Projects() {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-[#1f2937] text-[#9ca3af] hover:text-[#f59e0b] transition-colors"
+                      className="p-2 rounded-lg bg-[#171f2a] text-[#b8c0cc] hover:text-[#c9a45e] transition-colors"
                       aria-label={`Visit ${project.name}`}
                     >
                       <ExternalLink size={15} />
@@ -94,20 +94,20 @@ export default function Projects() {
                 {/* Card body */}
                 <div className="p-6 flex-1 space-y-4">
                   <div>
-                    <p className="text-xs font-semibold text-[#9ca3af]/60 uppercase tracking-wide mb-1">Problem</p>
-                    <p className="text-sm text-[#9ca3af] leading-relaxed">{project.problem}</p>
+                    <p className="text-xs font-semibold text-[#b8c0cc]/60 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-sm text-[#b8c0cc] leading-relaxed">{project.problem}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-[#9ca3af]/60 uppercase tracking-wide mb-1">Solution</p>
-                    <p className="text-sm text-[#9ca3af] leading-relaxed">{project.solution}</p>
+                    <p className="text-xs font-semibold text-[#b8c0cc]/60 uppercase tracking-wide mb-1">Solution</p>
+                    <p className="text-sm text-[#b8c0cc] leading-relaxed">{project.solution}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-[#9ca3af]/60 uppercase tracking-wide mb-2">Technical highlights</p>
+                    <p className="text-xs font-semibold text-[#b8c0cc]/60 uppercase tracking-wide mb-2">Technical highlights</p>
                     <div className="flex flex-wrap gap-2">
                       {project.technical.map((item) => (
                         <span
                           key={item}
-                          className="px-2.5 py-1 text-xs font-medium text-[#9ca3af] bg-[#1f2937] rounded-full border border-[#374151]/50"
+                          className="px-2.5 py-1 text-xs font-medium text-[#b8c0cc] bg-[#171f2a] rounded-full border border-[#2a3441]/50"
                         >
                           {item}
                         </span>
@@ -117,10 +117,10 @@ export default function Projects() {
                 </div>
 
                 {/* Key decision footer */}
-                <div className="px-6 py-4 bg-[#0f172a] border-t border-[#374151]/30">
+                <div className="px-6 py-4 bg-[#0b1018] border-t border-[#2a3441]/30">
                   <div className="flex items-start gap-2">
                     <ArrowRight className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: project.color }} />
-                    <p className="text-xs text-[#9ca3af] italic leading-relaxed">{project.decision}</p>
+                    <p className="text-xs text-[#b8c0cc] italic leading-relaxed">{project.decision}</p>
                   </div>
                 </div>
               </article>
@@ -130,8 +130,8 @@ export default function Projects() {
 
         {/* All Projects */}
         <FadeIn>
-          <h3 className="text-lg font-bold text-[#f9fafb] mb-6 flex items-center gap-2">
-            <span className="w-6 h-0.5 bg-[#f59e0b]"></span>
+          <h3 className="text-lg font-bold text-[#f4efe6] mb-6 flex items-center gap-2">
+            <span className="w-6 h-0.5 bg-[#c9a45e]"></span>
             All Projects
           </h3>
         </FadeIn>
@@ -139,11 +139,11 @@ export default function Projects() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <FadeIn key={project.name} delay={0.1 * index}>
-              <article className="group flex flex-col h-full rounded-2xl bg-[#111827] border border-[#374151]/50 hover:border-[#f59e0b]/30 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+              <article className="group flex flex-col h-full rounded-lg bg-[#10151d] border border-[#2a3441]/50 hover:border-[#c9a45e]/30 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                 <div className="p-6 flex-1">
                   <div className="flex items-start justify-between mb-4">
                     <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center"
+                      className="w-12 h-12 rounded-lg flex items-center justify-center"
                       style={{ backgroundColor: `${project.color}15` }}
                     >
                       <project.icon
@@ -157,7 +157,7 @@ export default function Projects() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-2 rounded-lg bg-[#1f2937] text-[#9ca3af] hover:text-[#f9fafb] transition-colors"
+                          className="p-2 rounded-lg bg-[#171f2a] text-[#b8c0cc] hover:text-[#f4efe6] transition-colors"
                           aria-label={`${project.name} GitHub`}
                         >
                           <CodeIcon size={16} />
@@ -167,7 +167,7 @@ export default function Projects() {
                         href={project.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 rounded-lg bg-[#1f2937] text-[#9ca3af] hover:text-[#f59e0b] transition-colors"
+                        className="p-2 rounded-lg bg-[#171f2a] text-[#b8c0cc] hover:text-[#c9a45e] transition-colors"
                         aria-label={`${project.name} Live Demo`}
                       >
                         <ExternalLink size={16} />
@@ -175,13 +175,13 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#f9fafb] mb-1">
+                  <h3 className="text-lg font-bold text-[#f4efe6] mb-1">
                     {project.name}
                   </h3>
                   <p className="text-sm font-medium mb-3" style={{ color: project.color }}>
                     {project.tagline}
                   </p>
-                  <p className="text-[#9ca3af] text-sm leading-relaxed mb-4">
+                  <p className="text-[#b8c0cc] text-sm leading-relaxed mb-4">
                     {project.description}
                   </p>
 
@@ -189,7 +189,7 @@ export default function Projects() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-1 text-xs font-medium text-[#9ca3af] bg-[#1f2937] rounded-full border border-[#374151]/50"
+                        className="px-2.5 py-1 text-xs font-medium text-[#b8c0cc] bg-[#171f2a] rounded-full border border-[#2a3441]/50"
                       >
                         {tag}
                       </span>
@@ -197,14 +197,14 @@ export default function Projects() {
                   </div>
                 </div>
 
-                <div className="px-6 py-4 bg-[#0f172a] border-t border-[#374151]/30 flex gap-4">
+                <div className="px-6 py-4 bg-[#0b1018] border-t border-[#2a3441]/30 flex gap-4">
                   {project.metrics.map((metric) => (
                     <div key={metric} className="flex items-center gap-1.5">
                       <div
                         className="w-1.5 h-1.5 rounded-full"
                         style={{ backgroundColor: project.color }}
                       />
-                      <span className="text-xs font-medium text-[#9ca3af]">
+                      <span className="text-xs font-medium text-[#b8c0cc]">
                         {metric}
                       </span>
                     </div>

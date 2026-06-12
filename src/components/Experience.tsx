@@ -55,24 +55,24 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#111827]"
+      className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#10151d]"
     >
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <FadeIn>
-            <p className="text-[#f59e0b] text-sm font-semibold tracking-widest uppercase mb-4">
+            <p className="text-[#c9a45e] text-sm font-semibold tracking-normal mb-4">
               Career
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-[#f9fafb] mb-4">
+            <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl font-bold text-[#f4efe6] mb-4">
               Work Experience
             </h2>
           </FadeIn>
         </div>
 
         <div className="relative">
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-[#374151] md:-translate-x-px"></div>
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-[#2a3441] md:-translate-x-px"></div>
 
           {experiences.map((exp, index) => (
             <FadeIn key={exp.period} delay={0.1 * index}>
@@ -82,15 +82,15 @@ export default function Experience() {
                 }`}
               >
                 <div className="flex-1 md:text-right">
-                  <div className="p-6 rounded-2xl bg-[#1f2937] border border-[#374151]/50 hover:border-[#f59e0b]/30 transition-colors">
+                  <div className="p-6 rounded-lg bg-[#171f2a] border border-[#2a3441]/50 hover:border-[#c9a45e]/30 transition-colors">
                     <div className="flex flex-col md:items-end gap-1 mb-3">
-                      <span className="inline-block px-3 py-1 text-xs font-semibold text-[#f59e0b] bg-[#f59e0b]/10 rounded-full">
+                      <span className="inline-block px-3 py-1 text-xs font-semibold text-[#c9a45e] bg-[#c9a45e]/10 rounded-full">
                         {exp.period}
                       </span>
-                      <h3 className="text-lg font-bold text-[#f9fafb]">
+                      <h3 className="text-lg font-bold text-[#f4efe6]">
                         {exp.role}
                       </h3>
-                      <p className="text-sm text-[#9ca3af]">
+                      <p className="text-sm text-[#b8c0cc]">
                         {exp.company} · {exp.location}
                       </p>
                     </div>
@@ -98,7 +98,7 @@ export default function Experience() {
                       {exp.highlights.map((highlight, i) => (
                         <li
                           key={i}
-                          className="text-sm text-[#9ca3af] leading-relaxed"
+                          className="text-sm text-[#b8c0cc] leading-relaxed"
                         >
                           {highlight}
                         </li>
@@ -107,7 +107,7 @@ export default function Experience() {
                   </div>
                 </div>
 
-                <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-[#f59e0b] border-4 border-[#111827] md:-translate-x-1.5 mt-6"></div>
+                <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-[#c9a45e] border-4 border-[#10151d] md:-translate-x-1.5 mt-6"></div>
 
                 <div className="flex-1 hidden md:block"></div>
               </div>
