@@ -1,60 +1,8 @@
 "use client";
 
-import {
-  ShieldCheck,
-  AlertTriangle,
-  UserCheck,
-  ClipboardCheck,
-  Lock,
-  Brain,
-  Award,
-} from "lucide-react";
+import { Award } from "lucide-react";
+import { responsibleAiControls } from "@/data/portfolio";
 import FadeIn from "./FadeIn";
-
-const controls = [
-  {
-    icon: ShieldCheck,
-    title: "Input Validation & Data Quality",
-    description:
-      "Validate format, type, and length on all inputs. Treat external content as untrusted by default. Reject unexpected or malformed inputs before they reach any AI or backend system.",
-    example: "Pivot Parlor booking forms · BytesCRM contact imports",
-  },
-  {
-    icon: AlertTriangle,
-    title: "Prompt Injection Awareness",
-    description:
-      "Separate trusted system instructions from user-supplied content. Restrict what AI can access. Test adversarial inputs during development — not just happy-path scenarios.",
-    example: "AI-generated booking pages · BytesAI Learn quiz generation",
-  },
-  {
-    icon: UserCheck,
-    title: "Human Approval Gates",
-    description:
-      "AI-generated content requires human review before publishing. Consequential actions — releasing features, publishing pages, triggering automations — require explicit human sign-off.",
-    example: "Pivot Parlor: staff reviews AI pages before going live",
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Output Verification",
-    description:
-      "Check AI outputs against requirements. Cross-check factual claims. Confident-sounding output is not a substitute for verification — hallucination is always a risk, treated as such.",
-    example: "PRD critique workflow · Case study content review",
-  },
-  {
-    icon: Lock,
-    title: "Permission Controls & Guardrails",
-    description:
-      "Least-privilege access throughout. AI systems have no more authority than needed for their task. Structured outputs, rate limits, and error handling reduce blast radius from failures.",
-    example: "BytesCRM role-based access · per-tenant data isolation",
-  },
-  {
-    icon: Brain,
-    title: "Context Engineering",
-    description:
-      "Maintain project purpose, requirements, decisions and task lists across sessions. Prevent context degradation from compounding errors. Compact and restart with a handover document when context limits approach.",
-    example: "This portfolio — built and maintained using this exact practice",
-  },
-];
 
 export default function ResponsibleAI() {
   return (
@@ -84,7 +32,7 @@ export default function ResponsibleAI() {
 
         {/* Controls Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {controls.map((control, index) => (
+          {responsibleAiControls.map((control, index) => (
             <FadeIn key={control.title} delay={0.1 * index}>
               <div className="group p-6 rounded-2xl bg-[#111827] border border-[#374151]/50 hover:border-[#2dd4bf]/30 transition-all duration-300 hover:-translate-y-1 flex flex-col">
                 <div className="w-12 h-12 rounded-xl bg-[#2dd4bf]/10 flex items-center justify-center mb-4 group-hover:bg-[#2dd4bf]/20 transition-colors">

@@ -1,6 +1,7 @@
 "use client";
 
-import { ExternalLink, TrendingUp, Users, ShoppingCart, Scissors, Gamepad2, Hash, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
+import { featuredProjects, projects } from "@/data/portfolio";
 import FadeIn from "./FadeIn";
 
 function CodeIcon({ size = 16 }: { size?: number }) {
@@ -20,106 +21,6 @@ function CodeIcon({ size = 16 }: { size?: number }) {
     </svg>
   );
 }
-
-const featuredProjects = [
-  {
-    name: "BytesCRM",
-    url: "https://bytescrm.app",
-    tagline: "LeadGen & CRM Multi-Tenant Platform",
-    color: "#2dd4bf",
-    icon: Users,
-    problem: "Agencies managing leads across scattered spreadsheets and disconnected tools — no single source of truth, no automation.",
-    solution: "Centralised multi-tenant CRM with 5 data types (contacts, leads, deals, subscribers, tasks), admin dashboards, automation workflows, and billing.",
-    technical: ["Multi-tenant architecture", "Next.js + Node.js", "Role-based access control", "Per-tenant data isolation"],
-    decision: "Chose multi-tenant with hard data isolation over single-tenant to support agency resellers — a product decision made before a line of code was written.",
-  },
-  {
-    name: "Pivot Parlor",
-    url: "https://pivotparlor.com",
-    tagline: "Smart Booking for Beauty & Barber Shops",
-    color: "#a78bfa",
-    icon: Scissors,
-    problem: "Independent salons need online booking but subscription SaaS is too expensive — Fresha takes commission, Booksy charges monthly fees.",
-    solution: "Commission-only booking platform: £100 one-time setup, 10% commission on completed bookings only. AI generates branded booking pages per partner.",
-    technical: ["Multi-tenant booking engine", "AI-generated pages (with human review gate)", "SMS + email reminders", "Waitlists + QR booking links"],
-    decision: "Commercial model (£100 + 10% commission) was a product decision based on market research — not a default SaaS pricing template.",
-  },
-];
-
-const projects = [
-  {
-    name: "BytesAI Learn",
-    url: "https://learn.bytesai.uk/",
-    github: null,
-    tagline: "Free AI Courses Membership Platform",
-    description:
-      "A dedicated e-learning platform democratising AI education through structured membership-based courses. Designed to guide learners from fundamentals to applied generative AI with clear learning paths and practical exercises.",
-    icon: TrendingUp,
-    tags: ["Next.js", "Membership", "EdTech", "AI"],
-    metrics: ["Membership Model", "Course Progression"],
-    color: "#f59e0b",
-  },
-  {
-    name: "BytesCRM",
-    url: "https://bytescrm.app",
-    github: null,
-    tagline: "LeadGen & CRM Multi-Tenant Platform",
-    description:
-      "A high-performance agency CRM combining lead generation, contact management, deal tracking, and subscriber management in one centralised platform. Features admin dashboards, automation workflows, billing subscriptions, and multi-tenant architecture for agencies.",
-    icon: Users,
-    tags: ["Multi-tenant", "CRM", "SaaS", "Dashboard"],
-    metrics: ["5 Data Types", "Automation Engine"],
-    color: "#2dd4bf",
-  },
-  {
-    name: "Active Paw",
-    url: "https://activepaw.co.uk",
-    github: null,
-    tagline: "Shopify Custom Theme — Pet Care Marketplace",
-    description:
-      "A fully customised Shopify storefront for a UK pet care marketplace. Features collection-based navigation, review-led product confidence, free-shipping threshold prompts, and a care-first support UX optimised for pet owners browsing grooming, toys, and health essentials.",
-    icon: ShoppingCart,
-    tags: ["Shopify", "E-commerce", "Custom Theme", "UX"],
-    metrics: ["UK Market", "Conversion-Focused"],
-    color: "#f472b6",
-  },
-  {
-    name: "Pivot Parlor",
-    url: "https://pivotparlor.com",
-    github: null,
-    tagline: "Smart Booking for Beauty & Barber Shops",
-    description:
-      "An AI-branded booking platform for independent salons and barbershops. Zero monthly fees, commission-based model. Features smart scheduling, staff management, waitlists, email/SMS reminders, and AI-generated branded booking pages.",
-    icon: Scissors,
-    tags: ["Booking System", "AI-Powered", "Multi-tenant", "SaaS"],
-    metrics: ["£100 Setup", "10% Commission"],
-    color: "#a78bfa",
-  },
-  {
-    name: "Shikaku: Puzzle Quest",
-    url: "https://shikaku.bytesai.uk",
-    github: null,
-    tagline: "Premium Logic Grid Multiplayer Game",
-    description:
-      "A real-time multiplayer logic puzzle game featuring 1v1 battle arena with ELO matchmaking, global leaderboards, QR-code friend invites, and fair-play rotation. Cross-platform responsive design with neon visual feedback and progressive quest ranks.",
-    icon: Gamepad2,
-    tags: ["Real-time", "Multiplayer", "ELO Matchmaking", "PWA"],
-    metrics: ["1v1 Battles", "Global Leaderboard"],
-    color: "#34d399",
-  },
-  {
-    name: "NumNinja",
-    url: "https://numninja.bytesai.uk",
-    github: null,
-    tagline: "The Number Guessing Challenge",
-    description:
-      "A fast-paced number guessing game with player authentication, guest play up to level 5, and progressive difficulty. Clean UI focused on quick-play engagement with session persistence and score tracking.",
-    icon: Hash,
-    tags: ["Game", "Auth", "Progressive Difficulty", "Quick Play"],
-    metrics: ["Guest & Registered", "Level Progression"],
-    color: "#60a5fa",
-  },
-];
 
 export default function Projects() {
   return (

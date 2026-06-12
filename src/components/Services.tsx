@@ -1,34 +1,7 @@
 "use client";
 
-import { LayoutTemplate, ShoppingBag, BrainCircuit } from "lucide-react";
+import { buildCategories } from "@/data/portfolio";
 import FadeIn from "./FadeIn";
-
-const builds = [
-  {
-    icon: LayoutTemplate,
-    title: "SaaS & Booking Platforms",
-    description:
-      "Multi-tenant SaaS systems, CRM platforms, booking engines, and member portals. Built through structured requirements, workflow design, and AI-assisted implementation — not ad-hoc generation.",
-    tags: ["Multi-tenant", "SaaS", "Bookings", "Subscriptions"],
-    evidence: "BytesCRM · Pivot Parlor · BytesAI Learn",
-  },
-  {
-    icon: ShoppingBag,
-    title: "E-commerce & Shopify",
-    description:
-      "Custom Shopify themes, conversion-focused storefronts, and product catalogues. Designed around real user behaviour and commercial objectives — not just aesthetics.",
-    tags: ["Shopify", "Custom Theme", "Conversion", "UX"],
-    evidence: "Active Paw",
-  },
-  {
-    icon: BrainCircuit,
-    title: "AI-Enabled Applications",
-    description:
-      "Generative AI integration with responsible-AI controls: input validation, human approval gates, output verification, and permission guardrails built in from the start — not added later.",
-    tags: ["Generative AI", "Responsible AI", "Automation", "Governance"],
-    evidence: "Pivot Parlor · BytesAI Learn · BytesCRM",
-  },
-];
 
 export default function Services() {
   return (
@@ -58,7 +31,7 @@ export default function Services() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {builds.map((item, index) => (
+          {buildCategories.map((item, index) => (
             <FadeIn key={item.title} delay={0.1 * index}>
               <div className="group p-8 rounded-2xl bg-[#1f2937] border border-[#374151]/50 hover:border-[#f59e0b]/40 transition-all duration-300 hover:-translate-y-1 flex flex-col">
                 <div className="w-14 h-14 rounded-xl bg-[#f59e0b]/10 flex items-center justify-center mb-6 group-hover:bg-[#f59e0b]/20 transition-colors">

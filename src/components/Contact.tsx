@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import FadeIn from "./FadeIn";
 
 function LinkedInIcon({ size = 24 }: { size?: number }) {
@@ -50,7 +50,7 @@ export default function Contact() {
         </div>
 
         <FadeIn delay={0.3}>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          <div className="grid sm:grid-cols-3 gap-4 mb-12">
             <a
               href="mailto:fbmacagba@gmail.com"
               className="group flex flex-col items-center p-6 rounded-2xl bg-[#111827] border border-[#374151]/50 hover:border-[#f59e0b]/40 transition-all hover:-translate-y-1"
@@ -95,23 +95,6 @@ export default function Contact() {
               </span>
               <span className="text-xs text-[#9ca3af] text-center">
                 linkedin.com/in/fbmacagba
-              </span>
-            </a>
-
-            <a
-              href="https://bytesfx.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex flex-col items-center p-6 rounded-2xl bg-[#111827] border border-[#374151]/50 hover:border-[#f59e0b]/40 transition-all hover:-translate-y-1"
-            >
-              <div className="w-12 h-12 rounded-xl bg-[#f59e0b]/10 flex items-center justify-center mb-4 group-hover:bg-[#f59e0b]/20 transition-colors">
-                <ExternalLink className="w-6 h-6 text-[#f59e0b]" />
-              </div>
-              <span className="text-sm font-semibold text-[#f9fafb] mb-1">
-                Website
-              </span>
-              <span className="text-xs text-[#9ca3af] text-center">
-                bytesfx.com
               </span>
             </a>
           </div>
