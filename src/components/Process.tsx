@@ -2,6 +2,7 @@
 
 import { processCaseStudies, processStages, type CaseStudyRow } from "@/data/portfolio";
 import FadeIn from "./FadeIn";
+import BuildLoop from "./BuildLoop";
 
 function CaseStudySection({
   label,
@@ -59,6 +60,10 @@ export default function Process() {
             </p>
           </FadeIn>
         </div>
+
+        <FadeIn>
+          <BuildLoop />
+        </FadeIn>
 
         {/* 16-Stage Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-20">

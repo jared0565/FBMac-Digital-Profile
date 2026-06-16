@@ -31,7 +31,7 @@ const technicalSkills = [
 const professionalSkills = [
   {
     name: "Product Development",
-    skills: ["Requirements Definition", "PRD Development", "Workflow Design", "MVP Scoping", "Feature Prioritisation"],
+    skills: ["Requirements Definition", "PRD Development", "Workflow Design", "Prompt Engineering", "MVP Scoping", "Feature Prioritisation"],
   },
   {
     name: "Responsible AI",
