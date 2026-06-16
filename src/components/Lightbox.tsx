@@ -90,7 +90,7 @@ export default function Lightbox({
         ref={dialogRef}
         role="dialog"
         aria-modal="true"
-        aria-label={`${project.name} — desktop and mobile screenshots`}
+        aria-label={`${project.name}: desktop and mobile screenshots`}
         onClick={(e) => e.stopPropagation()}
         className={`relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-lg bg-[#10151d] border border-[#2a3441]/60 shadow-2xl transition-all duration-200 ${
           visible ? "opacity-100 scale-100" : "opacity-0 scale-95"
@@ -129,7 +129,7 @@ export default function Lightbox({
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={project.screenshotDesktop}
-              alt={`${project.screenshotAlt} — desktop view`}
+              alt={`${project.screenshotAlt} (desktop)`}
               width={1280}
               height={800}
               className="w-full rounded-lg border border-[#2a3441]/60"
@@ -144,7 +144,7 @@ export default function Lightbox({
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={project.screenshotMobile}
-                alt={`${project.screenshotAlt} — mobile view`}
+                alt={`${project.screenshotAlt} (mobile)`}
                 width={390}
                 height={844}
                 className="w-full rounded-[1.6rem]"

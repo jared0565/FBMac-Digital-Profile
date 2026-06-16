@@ -32,7 +32,7 @@ export default function About() {
             <FadeIn delay={0.2}>
               <div className="space-y-4 text-[#b8c0cc] text-base sm:text-lg leading-relaxed">
                 <p>
-                  I spent over a decade in hospitality and remote operations —
+                  I spent over a decade in hospitality and remote operations,
                   managing e-commerce fulfilment, coordinating distributed teams,
                   and solving real business problems under pressure. That career
                   taught me what organisations actually need from software: tools
@@ -42,8 +42,8 @@ export default function About() {
                 <p>
                   Since 2023, I have been building production applications using a
                   structured, human-led process: I research the problem, define
-                  requirements, design the workflow, and specify every decision —
-                  AI assists implementation, I own the product. This means every
+                  requirements, design the workflow, and specify every decision.
+                  AI assists implementation; I own the product. This means every
                   application starts with a PRD, progresses through defined stages,
                   and ships only after review, testing, and iteration.
                 </p>
@@ -56,7 +56,7 @@ export default function About() {
                 </p>
                 <p className="text-[#f4efe6] font-medium">
                   Current focus: SaaS platforms, e-commerce and AI-enabled
-                  applications — built for real users and real business problems.
+                  applications, built for real users and real business problems.
                 </p>
               </div>
             </FadeIn>

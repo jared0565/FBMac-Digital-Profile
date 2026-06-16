@@ -86,7 +86,7 @@ export const featuredProjects: FeaturedProject[] = [
     color: "#6bc7c4",
     icon: Users,
     problem:
-      "Agencies managing leads across scattered spreadsheets and disconnected tools — no single source of truth, no automation.",
+      "Agencies managing leads across scattered spreadsheets and disconnected tools, with no single source of truth and no automation.",
     solution:
       "Centralised multi-tenant CRM with 5 data types (contacts, leads, deals, subscribers, tasks), admin dashboards, automation workflows, and billing.",
     technical: [
@@ -96,18 +96,18 @@ export const featuredProjects: FeaturedProject[] = [
       "Per-tenant data isolation",
     ],
     decision:
-      "Chose multi-tenant with hard data isolation over single-tenant to support agency resellers — a product decision made before a line of code was written.",
+      "Chose multi-tenant with hard data isolation over single-tenant to support agency resellers, a product decision made before a line of code was written.",
   },
   {
     name: "Active Paw",
     url: "https://activepaw.co.uk",
-    tagline: "Demand-Driven Pet Store — Shopify Theme + AI Backend",
+    tagline: "Demand-Driven Pet Store: Shopify Theme + AI Backend",
     color: "#f472b6",
     icon: ShoppingBag,
     problem:
-      "A pet store where every product listing required manual effort — sourcing from suppliers, writing descriptions, managing prices, retiring dead stock. The owner wanted customer demand to drive the catalogue automatically.",
+      "A pet store where every product listing required manual effort: sourcing from suppliers, writing descriptions, managing prices, and retiring dead stock. The owner wanted customer demand to drive the catalogue automatically.",
     solution:
-      "A two-repo system: a Shopify Liquid theme that captures visitor demand via search backfill and ghost cards, paired with PawScout — a Cloudflare Worker that runs LLM quality gates, vision-vets images, and auto-imports products the moment a real visitor shows interest.",
+      "A two-repo system: a Shopify Liquid theme that captures visitor demand via search backfill and ghost cards, paired with PawScout, a Cloudflare Worker that runs LLM quality gates, vision-vets images, and auto-imports products the moment a real visitor shows interest.",
     technical: [
       "Shopify Liquid theme + App Proxy",
       "Cloudflare Worker (PawScout)",
@@ -115,7 +115,7 @@ export const featuredProjects: FeaturedProject[] = [
       "Import-on-first-interest pipeline",
     ],
     decision:
-      "Built on Shopify App Proxy so PawScout can fail completely without breaking the store — all calls degrade to no-ops. The theme is deliberately stateless on quality; all intelligence lives in the worker.",
+      "Built on Shopify App Proxy so PawScout can fail completely without breaking the store; all calls degrade to no-ops. The theme is deliberately stateless on quality; all intelligence lives in the worker.",
   },
 ];
 export const projects: Project[] = [
@@ -132,7 +132,7 @@ export const projects: Project[] = [
     color: "#c9a45e",
     screenshotDesktop: "/projects/bytesai-learn-desktop.webp",
     screenshotMobile: "/projects/bytesai-learn-mobile.webp",
-    screenshotAlt: "BytesAI Learn homepage — curated free AI courses with a searchable catalogue",
+    screenshotAlt: "BytesAI Learn homepage: curated free AI courses with a searchable catalogue",
   },
   {
     name: "BytesCRM",
@@ -153,7 +153,7 @@ export const projects: Project[] = [
     name: "Active Paw",
     url: "https://activepaw.co.uk",
     github: null,
-    tagline: "Shopify Custom Theme — Pet Care Marketplace",
+    tagline: "Shopify Custom Theme: Pet Care Marketplace",
     description:
       "A fully customised Shopify storefront for a UK pet care marketplace. Features collection-based navigation, review-led product confidence, free-shipping threshold prompts, and a care-first support UX optimised for pet owners browsing grooming, toys, and health essentials.",
     icon: ShoppingBag,
@@ -198,7 +198,7 @@ export const projects: Project[] = [
     name: "Oak Hill Park Cafe",
     url: "https://oak.bytesfx.com",
     github: null,
-    tagline: "Real-Time Booking Platform — Family Cafe & Soft Play",
+    tagline: "Real-Time Booking Platform: Family Cafe and Soft Play",
     description:
       "Full-stack platform for a Barnet family cafe: dependency-free static front end paired with a serverless booking system built on Cloudflare Pages Functions and D1. Features real-time party slot availability, a soft-hold workflow that prevents double-bookings at the database level, an owner admin panel, bot-protected enquiry forms with Resend email integration, and GDPR cookie consent. Pitched as a modernisation of their outdated site, timed around their new 5-star Food Hygiene Rating.",
     icon: Star,
@@ -207,7 +207,7 @@ export const projects: Project[] = [
     color: "#4ade80",
     screenshotDesktop: "/projects/oak-hill-desktop.webp",
     screenshotMobile: "/projects/oak-hill-mobile.webp",
-    screenshotAlt: "Oak Hill Park Cafe redesign hero — 5-star hygiene certificate and soft play info",
+    screenshotAlt: "Oak Hill Park Cafe redesign hero with 5-star hygiene certificate and soft play info",
   },
 ];
 
@@ -232,16 +232,16 @@ export const processStages: ProcessStage[] = [
 
 export const processCaseStudies: CaseStudy[] = [
   {
-    label: "Case Study — BytesCRM",
+    label: "Case Study: BytesCRM",
     title: "Building a Multi-Tenant CRM",
     rows: [
       {
         heading: "Problem",
-        body: "Agencies managing leads across scattered spreadsheets, email threads and disconnected SaaS tools — no single source of truth.",
+        body: "Agencies managing leads across scattered spreadsheets, email threads and disconnected SaaS tools, with no single source of truth.",
       },
       {
         heading: "Research",
-        body: "Identified need for a centralised CRM with automation, multi-tenant data isolation, and role-based access — not a generic off-the-shelf tool.",
+        body: "Identified need for a centralised CRM with automation, multi-tenant data isolation, and role-based access, not a generic off-the-shelf tool.",
       },
       {
         heading: "Requirements (PRD)",
@@ -257,11 +257,11 @@ export const processCaseStudies: CaseStudy[] = [
       },
       {
         heading: "Responsible AI",
-        body: "Automation guardrails: user-defined rules only — AI does not make business decisions. Permission controls: least privilege per role. Data isolation enforced at query level.",
+        body: "Automation guardrails: user-defined rules only. AI does not make business decisions. Permission controls: least privilege per role. Data isolation enforced at query level.",
       },
       {
         heading: "Iteration",
-        body: "Multiple revision rounds on dashboard layouts, automation workflow logic, and billing integration — each iteration driven by a specific gap or test failure.",
+        body: "Multiple revision rounds on dashboard layouts, automation workflow logic, and billing integration, each driven by a specific gap or test failure.",
       },
       {
         heading: "MVP",
@@ -270,28 +270,28 @@ export const processCaseStudies: CaseStudy[] = [
     ],
   },
   {
-    label: "Case Study — Active Paw",
+    label: "Case Study: Active Paw",
     title: "Demand-Driven Shopify Store with AI Backend",
     rows: [
       {
         heading: "Problem",
-        body: "A pet accessories store requiring constant manual effort — sourcing from suppliers, writing listings, managing prices, retiring dead stock. The owner wanted customer demand to decide what gets listed, not manual buying decisions.",
+        body: "A pet accessories store requiring constant manual effort: sourcing from suppliers, writing listings, managing prices, and retiring dead stock. The owner wanted customer demand to decide what gets listed, not manual buying decisions.",
       },
       {
         heading: "Research",
-        body: "Identified that Shopify's native search gap (fewer than 12 results) was wasted demand signal. Real visitor searches were revealing products the store didn't stock but suppliers could fulfil — the opportunity was to capture that signal and act on it automatically.",
+        body: "Identified that Shopify's native search gap (fewer than 12 results) was wasted demand signal. Real visitor searches were revealing products the store didn't stock but suppliers could fulfil, and the opportunity was to capture that signal and act on it automatically.",
       },
       {
         heading: "Architecture Decision",
-        body: "Two-repo system: Shopify Liquid theme as the demand surface, PawScout Cloudflare Worker as the intelligence layer. All supplier calls, quality gates, pricing, and import logic live in the worker — the theme is stateless. Shopify App Proxy used throughout so PawScout outages degrade gracefully to standard search.",
+        body: "Two-repo system: Shopify Liquid theme as the demand surface, PawScout Cloudflare Worker as the intelligence layer. All supplier calls, quality gates, pricing, and import logic live in the worker; the theme is stateless. Shopify App Proxy used throughout so PawScout outages degrade gracefully to standard search.",
       },
       {
         heading: "AI Integration",
-        body: "LLM quality gates on every ghost card: pet-relevance check prevents off-category products appearing in backfill. Vision API vets product images before caching — ensuring ghost cards show the correct hero image, not a mismatched supplier thumbnail.",
+        body: "LLM quality gates on every ghost card: pet-relevance check prevents off-category products appearing in backfill. Vision API vets product images before caching, ensuring ghost cards show the correct hero image rather than a mismatched supplier thumbnail.",
       },
       {
         heading: "Responsible AI",
-        body: "Pet-relevance guard added after an LLM outage let kitchen tools slip through quality gates — the store now stays stocked with genuine pet products regardless of LLM availability. Ghost cards only surface quality-gated results; if the worker is down, the store runs as plain Shopify search with no errors shown.",
+        body: "Pet-relevance guard added after an LLM outage let kitchen tools slip through quality gates, so the store now stays stocked with genuine pet products regardless of LLM availability. Ghost cards only surface quality-gated results; if the worker is down, the store runs as plain Shopify search with no errors shown.",
       },
       {
         heading: "Iteration",
@@ -317,21 +317,21 @@ export const responsibleAiControls: ResponsibleAiControl[] = [
     icon: AlertTriangle,
     title: "Prompt Injection Awareness",
     description:
-      "Separate trusted system instructions from user-supplied content. Restrict what AI can access. Test adversarial inputs during development — not just happy-path scenarios.",
+      "Separate trusted system instructions from user-supplied content. Restrict what AI can access. Test adversarial inputs during development, not just happy-path scenarios.",
     example: "PawScout LLM quality gates · BytesAI Learn quiz generation",
   },
   {
     icon: UserCheck,
     title: "Human Approval Gates",
     description:
-      "AI-generated content requires human review before publishing. Consequential actions — releasing features, publishing pages, triggering automations — require explicit human sign-off.",
+      "AI-generated content requires human review before publishing. Consequential actions (releasing features, publishing pages, triggering automations) require explicit human sign-off.",
     example: "Pivot Parlor: staff reviews AI pages before going live",
   },
   {
     icon: ClipboardCheck,
     title: "Output Verification",
     description:
-      "Check AI outputs against requirements. Cross-check factual claims. Confident-sounding output is not a substitute for verification — hallucination is always a risk, treated as such.",
+      "Check AI outputs against requirements. Cross-check factual claims. Confident-sounding output is not a substitute for verification; hallucination is always a risk, treated as such.",
     example: "PRD critique workflow · Case study content review",
   },
   {
@@ -346,6 +346,6 @@ export const responsibleAiControls: ResponsibleAiControl[] = [
     title: "Context Engineering",
     description:
       "Maintain project purpose, requirements, decisions and task lists across sessions. Prevent context degradation from compounding errors. Compact and restart with a handover document when context limits approach.",
-    example: "This portfolio — built and maintained using this exact practice",
+    example: "This portfolio, built and maintained using this exact practice",
   },
 ];

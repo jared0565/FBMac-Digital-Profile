@@ -66,7 +66,7 @@ export default function ResponsibleAI() {
             </div>
             <div className="sm:ml-auto">
               <p className="text-sm text-[#b8c0cc] italic text-center sm:text-right max-w-xs">
-                &ldquo;Responsible AI is engineering discipline — not a compliance checkbox.&rdquo;
+                &ldquo;Responsible AI is engineering discipline, not a compliance checkbox.&rdquo;
               </p>
             </div>
           </div>

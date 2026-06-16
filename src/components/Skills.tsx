@@ -102,7 +102,7 @@ export default function Skills() {
           <FadeIn delay={0.2}>
             <p className="max-w-2xl mx-auto text-[#b8c0cc] text-lg">
               AI-assisted delivery combined with product and operations
-              expertise — the practical toolkit for directing, reviewing and
+              expertise: the practical toolkit for directing, reviewing and
               shipping real applications.
             </p>
           </FadeIn>
