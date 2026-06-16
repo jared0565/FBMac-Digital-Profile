@@ -124,12 +124,12 @@ export const projects: Project[] = [
     name: "BytesAI Learn",
     url: "https://learn.bytesai.uk/",
     github: null,
-    tagline: "Free AI Courses Membership Platform",
+    tagline: "Curated Discovery Platform for Free AI Courses",
     description:
-      "A dedicated e-learning platform democratising AI education through structured membership-based courses. Designed to guide learners from fundamentals to applied generative AI with clear learning paths and practical exercises.",
+      "A human-curated platform surfacing 100+ verified-free AI courses from Google, Anthropic, Stanford, DeepLearning.AI, Microsoft, NVIDIA, and 20+ other providers. Curation is the product: every course verified free, precisely categorised, and contextualised so learners can decide in under 60 seconds without signing up. Features intelligent search and filters, a Gemini-powered recommendation chatbot, personalised knowledge-gap quiz, AI Insights editorial feed, progress tracking (saved, started, completed), and engagement-based trending rankings. Built on Next.js 16 (App Router, React 19) running on Cloudflare Workers via OpenNext, with Cloudflare D1, KV, and R2.",
     icon: TrendingUp,
-    tags: ["Next.js", "Membership", "EdTech", "AI"],
-    metrics: ["Membership Model", "Course Progression"],
+    tags: ["Curation Platform", "EdTech", "AI Chatbot", "Cloudflare"],
+    metrics: ["100+ Free Courses", "20+ Providers"],
     color: "#c9a45e",
     screenshotDesktop: "/projects/bytesai-learn-desktop.webp",
     screenshotMobile: "/projects/bytesai-learn-mobile.webp",
@@ -319,7 +319,7 @@ export const responsibleAiControls: ResponsibleAiControl[] = [
     title: "Prompt Injection Awareness",
     description:
       "Separate trusted system instructions from user-supplied content. Restrict what AI can access. Test adversarial inputs during development, not just happy-path scenarios.",
-    example: "PawScout LLM quality gates · BytesAI Learn quiz generation",
+    example: "PawScout LLM quality gates · BytesAI Learn chatbot and AI article generation",
   },
   {
     icon: UserCheck,
