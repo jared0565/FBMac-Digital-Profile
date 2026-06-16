@@ -82,21 +82,21 @@ export const featuredProjects: FeaturedProject[] = [
   {
     name: "BytesCRM",
     url: "https://bytescrm.app",
-    tagline: "LeadGen & CRM Multi-Tenant Platform",
+    tagline: "AI-Powered CRM with Embeddable Chatbot Widget",
     color: "#6bc7c4",
     icon: Users,
     problem:
-      "Agencies managing leads across scattered spreadsheets and disconnected tools, with no single source of truth and no automation.",
+      "Small businesses lose website visitors without capturing them as leads, then manage the few they do get across disconnected tools: a separate chatbot, a separate CRM, and separate billing.",
     solution:
-      "Centralised multi-tenant CRM with 5 data types (contacts, leads, deals, subscribers, tasks), admin dashboards, automation workflows, and billing.",
+      "A single platform: an embeddable AI chatbot widget that captures leads from any website, a full CRM pipeline to manage them, and a pay-per-lead overflow model so businesses start free and only pay as they grow.",
     technical: [
-      "Multi-tenant architecture",
-      "Next.js + Node.js",
-      "Role-based access control",
-      "Per-tenant data isolation",
+      "React 18 + Base44 serverless (Deno)",
+      "Embeddable JS chatbot widget",
+      "Stripe subscriptions + pay-per-lead billing",
+      "OpenRouter / Claude / Gemini AI",
     ],
     decision:
-      "Chose multi-tenant with hard data isolation over single-tenant to support agency resellers, a product decision made before a line of code was written.",
+      "The overflow lead model was a deliberate product decision: leads above the plan limit are locked behind a one-time unlock payment rather than lost or auto-billed. This kept the free tier genuinely useful while creating a natural, low-friction upsell path.",
   },
   {
     name: "Active Paw",
@@ -138,12 +138,12 @@ export const projects: Project[] = [
     name: "BytesCRM",
     url: "https://bytescrm.app",
     github: null,
-    tagline: "LeadGen & CRM Multi-Tenant Platform",
+    tagline: "AI-Powered CRM with Embeddable Chatbot Widget",
     description:
-      "A high-performance agency CRM combining lead generation, contact management, deal tracking, and subscriber management in one centralised platform. Features admin dashboards, automation workflows, billing subscriptions, and multi-tenant architecture for agencies.",
+      "A full-stack CRM for small businesses and freelancers combining an embeddable AI chatbot widget (single script tag, no developer needed) with a Kanban deal pipeline, contact management, autoresponder email sequences, and Stripe-powered tiered billing. Leads above the plan limit enter an overflow queue with a pay-per-lead unlock model. Built on React 18, Base44 serverless (Deno), with OpenRouter, Claude, and Gemini powering the chat AI.",
     icon: Users,
-    tags: ["Multi-tenant", "CRM", "SaaS", "Dashboard"],
-    metrics: ["5 Data Types", "Automation Engine"],
+    tags: ["CRM", "AI Chatbot", "SaaS", "Lead Capture"],
+    metrics: ["Free Tier", "Pay-Per-Lead"],
     color: "#6bc7c4",
     screenshotDesktop: "/projects/bytescrm-desktop.webp",
     screenshotMobile: "/projects/bytescrm-mobile.webp",
@@ -233,39 +233,39 @@ export const processStages: ProcessStage[] = [
 export const processCaseStudies: CaseStudy[] = [
   {
     label: "Case Study: BytesCRM",
-    title: "Building a Multi-Tenant CRM",
+    title: "AI-Powered CRM with Embeddable Chatbot",
     rows: [
       {
         heading: "Problem",
-        body: "Agencies managing leads across scattered spreadsheets, email threads and disconnected SaaS tools, with no single source of truth.",
+        body: "Small businesses lose website visitors without capturing them as leads. The tools that exist are either too expensive (Salesforce, HubSpot at scale), too generic (no built-in lead capture), or disconnected (chatbot, CRM, and billing are three separate products stitched together).",
       },
       {
         heading: "Research",
-        body: "Identified need for a centralised CRM with automation, multi-tenant data isolation, and role-based access, not a generic off-the-shelf tool.",
+        body: "Identified three gaps: solo founders cannot afford per-seat enterprise pricing; standard CRMs have no website lead capture built in; and the setup required is too complex for a business owner without a developer.",
       },
       {
         heading: "Requirements (PRD)",
-        body: "Defined 5 core data types: contacts, leads, deals, subscribers, tasks. Specified admin dashboards, billing integration, and per-agency data isolation.",
+        body: "Embeddable chatbot widget (single script tag), lead inbox with overflow-and-unlock model, CRM pipeline (contacts, deals, tasks), autoresponder email sequences, Stripe-powered tiered billing with pay-per-lead unlocks, and role-based access (User, Admin, Developer).",
       },
       {
         heading: "Architecture Decision",
-        body: "Multi-tenant with hard data isolation per agency. Next.js frontend, Node.js API layer, SQLite with per-tenant scoping, Cloudflare deployment.",
+        body: "React 18 frontend with Base44 (Deno-based serverless) for the backend and entity store. Stripe for subscriptions and per-lead payments. Resend for transactional email. OpenRouter with Claude and Gemini powering the chatbot AI. The chatbot ships as a standalone embeddable JS widget, separate from the main app bundle.",
       },
       {
         heading: "AI-Assisted Implementation",
-        body: "Scaffolded each module with AI assistance → reviewed output → identified gaps → specified corrections → retested. Human sign-off at each module before moving on.",
+        body: "Each module scaffolded with AI assistance, output reviewed, gaps identified, corrections specified, then retested. Human sign-off at each module before moving on. AI provider cost monitored via a built-in pricing governance dashboard.",
       },
       {
         heading: "Responsible AI",
-        body: "Automation guardrails: user-defined rules only. AI does not make business decisions. Permission controls: least privilege per role. Data isolation enforced at query level.",
+        body: "Chatbot conversations are rule-scoped: AI cannot take actions outside its defined flow. Role-based access enforced throughout (User, Admin, Developer). Stripe environment switching (Test vs Live) requires explicit developer-level action with full audit logging. Overflow lead expiry emails give business owners 48h and 24h warnings before leads are permanently removed.",
       },
       {
         heading: "Iteration",
-        body: "Multiple revision rounds on dashboard layouts, automation workflow logic, and billing integration, each driven by a specific gap or test failure.",
+        body: "Five real pain points drove post-launch additions: losing website visitors (added chatbot widget); cost barrier (free tier with overflow model); attribution blind spots (UTM, Google Ads click ID, Meta Pixel tracking); onboarding friction (guided setup, under 10 minutes to first lead); and account recovery (structured deletion cooldown and re-registration flow).",
       },
       {
         heading: "MVP",
-        body: "Core CRM pipeline + agency dashboards + basic automation rules. Deployed. Feature planning for next cycle already documented.",
+        body: "Chatbot widget + lead inbox + CRM pipeline + Stripe billing deployed. Tiered plans (Free, Starter, Pro, Business, Enterprise) live. Smart Chatbot AI add-on and message top-up packs in the roadmap.",
       },
     ],
   },
@@ -339,7 +339,7 @@ export const responsibleAiControls: ResponsibleAiControl[] = [
     title: "Permission Controls & Guardrails",
     description:
       "Least-privilege access throughout. AI systems have no more authority than needed for their task. Structured outputs, rate limits, and error handling reduce blast radius from failures.",
-    example: "BytesCRM role-based access · per-tenant data isolation",
+    example: "BytesCRM role-based access (User, Admin, Developer) · Stripe environment gating",
   },
   {
     icon: Brain,
