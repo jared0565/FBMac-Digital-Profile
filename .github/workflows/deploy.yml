@@ -1,0 +1,44 @@
+name: Deploy to Cloudflare Pages
+
+# Builds the static export from source and deploys it to Cloudflare Pages.
+# This replaces CF's native git auto-build (which served a stale committed
+# dist/ and shipped HTML without its CSS/JS assets). Disable CF's automatic
+# git deployments so the two don't race.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-deploy-main
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static export
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 107ddadecf5d982d0dc11c72affcce79
+          command: pages deploy dist --project-name=fbmac-digital-profile --branch=main
