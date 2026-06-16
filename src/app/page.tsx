@@ -21,8 +21,8 @@ export default function Home() {
         <Projects />
         <Skills />
         <ResponsibleAI />
-        <Experience />
         <Education />
+        <Experience />
         <Contact />
       </main>
       <Footer />
