@@ -86,7 +86,7 @@ function SkillColumn({ title, categories, accentColor }: {
 
 export default function Skills() {
   return (
-    <section className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#10151d]">
+    <section id="skills" className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#10151d]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <FadeIn>

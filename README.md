@@ -25,7 +25,7 @@ A modern, high-contrast, accessibility-minded portfolio built with **Next.js 16*
 |-------|------------|
 | Framework | Next.js 16 (App Router, Static Export) |
 | Styling | Tailwind CSS v4 |
-| Animation | CSS / Tailwind transitions |
+| Animation | CSS/Tailwind transitions + Framer Motion (nav menu) |
 | Icons | Lucide React + inline SVG |
 | Fonts | Inter (sans), Playfair Display (serif) via next/font |
 | Imagery | Pre-optimized WebP product screenshots (lazy-loaded) |

@@ -8,8 +8,10 @@ const navLinks = [
   { href: "#about", label: "About" },
   { href: "#process", label: "Process" },
   { href: "#projects", label: "Projects" },
+  { href: "#responsible-ai", label: "Responsible AI" },
   { href: "#services", label: "What I Build" },
   { href: "#experience", label: "Experience" },
+  { href: "#skills", label: "Skills" },
   { href: "#education", label: "Learning" },
   { href: "#contact", label: "Contact" },
 ];
@@ -42,27 +44,21 @@ export default function Navbar() {
             FBMacagba
           </a>
 
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm font-medium text-[#b8c0cc] hover:text-[#c9a45e] transition-colors rounded-lg hover:bg-[#c9a45e]/5"
+                className="px-3 py-2 text-sm font-medium text-[#b8c0cc] hover:text-[#c9a45e] transition-colors rounded-lg hover:bg-[#c9a45e]/5"
               >
                 {link.label}
               </a>
             ))}
-            <a
-              href="#contact"
-              className="ml-4 px-5 py-2.5 text-sm font-semibold bg-[#c9a45e] text-[#07090d] rounded-lg hover:bg-[#e3c77f] transition-colors"
-            >
-              Hire Me
-            </a>
           </nav>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-[#b8c0cc] hover:text-[#f4efe6] transition-colors"
+            className="lg:hidden p-2 text-[#b8c0cc] hover:text-[#f4efe6] transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -78,7 +74,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-[#07090d] border-t border-[#2a3441]/50 overflow-y-auto"
+            className="lg:hidden fixed inset-x-0 top-16 md:top-20 bottom-0 z-40 bg-[#07090d] border-t border-[#2a3441]/50 overflow-y-auto"
           >
             <nav className="flex flex-col px-4 py-6 gap-1">
               {navLinks.map((link) => (
@@ -91,13 +87,6 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="#contact"
-                onClick={() => setIsOpen(false)}
-                className="mt-2 px-4 py-3 text-center text-base font-semibold bg-[#c9a45e] text-[#07090d] rounded-lg hover:bg-[#e3c77f] transition-colors"
-              >
-                Hire Me
-              </a>
             </nav>
           </motion.div>
         )}
