@@ -19,9 +19,9 @@ export default function Home() {
         <About />
         <Process />
         <Projects />
+        <Skills />
         <ResponsibleAI />
         <Experience />
-        <Skills />
         <Education />
         <Contact />
       </main>
