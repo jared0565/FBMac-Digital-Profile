@@ -99,23 +99,23 @@ export const featuredProjects: FeaturedProject[] = [
       "Chose multi-tenant with hard data isolation over single-tenant to support agency resellers — a product decision made before a line of code was written.",
   },
   {
-    name: "Pivot Parlor",
-    url: "https://pivotparlor.com",
-    tagline: "Smart Booking for Beauty & Barber Shops",
-    color: "#a78bfa",
-    icon: Scissors,
+    name: "Active Paw",
+    url: "https://activepaw.co.uk",
+    tagline: "Demand-Driven Pet Store — Shopify Theme + AI Backend",
+    color: "#f472b6",
+    icon: ShoppingBag,
     problem:
-      "Independent salons need online booking but subscription SaaS is too expensive — Fresha takes commission, Booksy charges monthly fees.",
+      "A pet store where every product listing required manual effort — sourcing from suppliers, writing descriptions, managing prices, retiring dead stock. The owner wanted customer demand to drive the catalogue automatically.",
     solution:
-      "Commission-only booking platform: £100 one-time setup, 10% commission on completed bookings only. AI generates branded booking pages per partner.",
+      "A two-repo system: a Shopify Liquid theme that captures visitor demand via search backfill and ghost cards, paired with PawScout — a Cloudflare Worker that runs LLM quality gates, vision-vets images, and auto-imports products the moment a real visitor shows interest.",
     technical: [
-      "Multi-tenant booking engine",
-      "AI-generated pages (with human review gate)",
-      "SMS + email reminders",
-      "Waitlists + QR booking links",
+      "Shopify Liquid theme + App Proxy",
+      "Cloudflare Worker (PawScout)",
+      "LLM quality gates + vision-vetted images",
+      "Import-on-first-interest pipeline",
     ],
     decision:
-      "Commercial model (£100 + 10% commission) was a product decision based on market research — not a default SaaS pricing template.",
+      "Built on Shopify App Proxy so PawScout can fail completely without breaking the store — all calls degrade to no-ops. The theme is deliberately stateless on quality; all intelligence lives in the worker.",
   },
 ];
 export const projects: Project[] = [
@@ -270,32 +270,36 @@ export const processCaseStudies: CaseStudy[] = [
     ],
   },
   {
-    label: "Case Study — Pivot Parlor",
-    title: "AI-Powered Booking for Salons",
+    label: "Case Study — Active Paw",
+    title: "Demand-Driven Shopify Store with AI Backend",
     rows: [
       {
         heading: "Problem",
-        body: "Salons and barbershops need online booking but Fresha takes commission, Booksy charges monthly subscriptions — neither model fits micro-businesses.",
+        body: "A pet accessories store requiring constant manual effort — sourcing from suppliers, writing listings, managing prices, retiring dead stock. The owner wanted customer demand to decide what gets listed, not manual buying decisions.",
       },
       {
         heading: "Research",
-        body: "Market gap: no low-cost one-time-setup model with commission only on completed bookings. Commercial decision: £100 setup + 10% commission — zero monthly cost to partner.",
+        body: "Identified that Shopify's native search gap (fewer than 12 results) was wasted demand signal. Real visitor searches were revealing products the store didn't stock but suppliers could fulfil — the opportunity was to capture that signal and act on it automatically.",
+      },
+      {
+        heading: "Architecture Decision",
+        body: "Two-repo system: Shopify Liquid theme as the demand surface, PawScout Cloudflare Worker as the intelligence layer. All supplier calls, quality gates, pricing, and import logic live in the worker — the theme is stateless. Shopify App Proxy used throughout so PawScout outages degrade gracefully to standard search.",
       },
       {
         heading: "AI Integration",
-        body: "AI generates branded booking pages for each partner — reduces onboarding friction significantly. Staff review required before any page goes live.",
+        body: "LLM quality gates on every ghost card: pet-relevance check prevents off-category products appearing in backfill. Vision API vets product images before caching — ensuring ghost cards show the correct hero image, not a mismatched supplier thumbnail.",
       },
       {
-        heading: "Responsible AI Controls",
-        body: "Input validation on all booking form fields (type, format, length — reject unexpected inputs). AI-generated pages reviewed by staff before publishing (human approval gate). Output verification: pages checked against brand requirements. Rollback: previous page version can be restored instantly.",
-      },
-      {
-        heading: "Architecture",
-        body: "Multi-tenant booking engine: each salon has isolated schedule, staff roster, and customer data. No cross-tenant data access by design.",
+        heading: "Responsible AI",
+        body: "Pet-relevance guard added after an LLM outage let kitchen tools slip through quality gates — the store now stays stocked with genuine pet products regardless of LLM availability. Ghost cards only surface quality-gated results; if the worker is down, the store runs as plain Shopify search with no errors shown.",
       },
       {
         heading: "Iteration",
-        body: "Post-launch additions driven by real partner feedback: SMS and email reminders, waitlist management, QR booking links — each specified, reviewed, and tested before release.",
+        body: "Three real bugs fixed post-launch: ghost card showing a cat image while the product showed a dog (fixed by caching vision-vetted hero image in PawScout); modal loading slowly on first open (fixed by pre-caching supplier data on search, not on click); off-category products slipping through during LLM outages (fixed by worker-level pet-relevance fallback).",
+      },
+      {
+        heading: "MVP",
+        body: "Search backfill with ghost cards, import-on-first-interest (product live within seconds of first click), 30-day performance cull, and fulfilment automation. Live at activepaw.co.uk.",
       },
     ],
   },
@@ -307,14 +311,14 @@ export const responsibleAiControls: ResponsibleAiControl[] = [
     title: "Input Validation & Data Quality",
     description:
       "Validate format, type, and length on all inputs. Treat external content as untrusted by default. Reject unexpected or malformed inputs before they reach any AI or backend system.",
-    example: "Pivot Parlor booking forms · BytesCRM contact imports",
+    example: "Active Paw ghost-card quality gates · BytesCRM contact imports",
   },
   {
     icon: AlertTriangle,
     title: "Prompt Injection Awareness",
     description:
       "Separate trusted system instructions from user-supplied content. Restrict what AI can access. Test adversarial inputs during development — not just happy-path scenarios.",
-    example: "AI-generated booking pages · BytesAI Learn quiz generation",
+    example: "PawScout LLM quality gates · BytesAI Learn quiz generation",
   },
   {
     icon: UserCheck,
