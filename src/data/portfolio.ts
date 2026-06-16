@@ -2,7 +2,6 @@ import {
   AlertTriangle,
   Bot,
   Brain,
-  BrainCircuit,
   CheckCircle,
   ClipboardCheck,
   ClipboardList,
@@ -12,7 +11,6 @@ import {
   Hash,
   IterationCw,
   LayoutDashboard,
-  LayoutTemplate,
   Lightbulb,
   Lock,
   MessageSquareCode,
@@ -78,14 +76,6 @@ export interface ResponsibleAiControl {
   title: string;
   description: string;
   example: string;
-}
-
-export interface BuildCategory {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  tags: string[];
-  evidence: string;
 }
 
 export const featuredProjects: FeaturedProject[] = [
@@ -353,32 +343,5 @@ export const responsibleAiControls: ResponsibleAiControl[] = [
     description:
       "Maintain project purpose, requirements, decisions and task lists across sessions. Prevent context degradation from compounding errors. Compact and restart with a handover document when context limits approach.",
     example: "This portfolio — built and maintained using this exact practice",
-  },
-];
-
-export const buildCategories: BuildCategory[] = [
-  {
-    icon: LayoutTemplate,
-    title: "SaaS & Booking Platforms",
-    description:
-      "Multi-tenant SaaS systems, CRM platforms, booking engines, and member portals. Built through structured requirements, workflow design, and AI-assisted implementation — not ad-hoc generation.",
-    tags: ["Multi-tenant", "SaaS", "Bookings", "Subscriptions"],
-    evidence: "BytesCRM · Pivot Parlor · BytesAI Learn",
-  },
-  {
-    icon: ShoppingBag,
-    title: "E-commerce & Shopify",
-    description:
-      "Custom Shopify themes, conversion-focused storefronts, and product catalogues. Designed around real user behaviour and commercial objectives — not just aesthetics.",
-    tags: ["Shopify", "Custom Theme", "Conversion", "UX"],
-    evidence: "Active Paw",
-  },
-  {
-    icon: BrainCircuit,
-    title: "AI-Enabled Applications",
-    description:
-      "Generative AI integration with responsible-AI controls: input validation, human approval gates, output verification, and permission guardrails built in from the start — not added later.",
-    tags: ["Generative AI", "Responsible AI", "Automation", "Governance"],
-    evidence: "Pivot Parlor · BytesAI Learn · BytesCRM",
   },
 ];
