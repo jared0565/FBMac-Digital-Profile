@@ -51,6 +51,9 @@ export interface Project {
   tags: string[];
   metrics: string[];
   color: string;
+  screenshotDesktop: string;
+  screenshotMobile: string;
+  screenshotAlt: string;
 }
 
 export interface ProcessStage {
@@ -137,6 +140,9 @@ export const projects: Project[] = [
     tags: ["Next.js", "Membership", "EdTech", "AI"],
     metrics: ["Membership Model", "Course Progression"],
     color: "#c9a45e",
+    screenshotDesktop: "/projects/bytesai-learn-desktop.webp",
+    screenshotMobile: "/projects/bytesai-learn-mobile.webp",
+    screenshotAlt: "BytesAI Learn homepage — curated free AI courses with a searchable catalogue",
   },
   {
     name: "BytesCRM",
@@ -149,6 +155,9 @@ export const projects: Project[] = [
     tags: ["Multi-tenant", "CRM", "SaaS", "Dashboard"],
     metrics: ["5 Data Types", "Automation Engine"],
     color: "#6bc7c4",
+    screenshotDesktop: "/projects/bytescrm-desktop.webp",
+    screenshotMobile: "/projects/bytescrm-mobile.webp",
+    screenshotAlt: "BytesCRM landing page showing the live lead-pipeline dashboard",
   },
   {
     name: "Active Paw",
@@ -161,6 +170,9 @@ export const projects: Project[] = [
     tags: ["Shopify", "E-commerce", "Custom Theme", "UX"],
     metrics: ["UK Market", "Conversion-Focused"],
     color: "#f472b6",
+    screenshotDesktop: "/projects/active-paw-desktop.webp",
+    screenshotMobile: "/projects/active-paw-mobile.webp",
+    screenshotAlt: "Active Paw pet-care storefront homepage with featured collections",
   },
   {
     name: "Pivot Parlor",
@@ -173,6 +185,9 @@ export const projects: Project[] = [
     tags: ["Booking System", "AI-Powered", "Multi-tenant", "SaaS"],
     metrics: ["£100 Setup", "10% Commission"],
     color: "#a78bfa",
+    screenshotDesktop: "/projects/pivot-parlor-desktop.webp",
+    screenshotMobile: "/projects/pivot-parlor-mobile.webp",
+    screenshotAlt: "Pivot Parlor booking platform landing page with a sample booking widget",
   },
   {
     name: "Shikaku: Puzzle Quest",
@@ -185,6 +200,9 @@ export const projects: Project[] = [
     tags: ["Real-time", "Multiplayer", "ELO Matchmaking", "PWA"],
     metrics: ["1v1 Battles", "Global Leaderboard"],
     color: "#34d399",
+    screenshotDesktop: "/projects/shikaku-desktop.webp",
+    screenshotMobile: "/projects/shikaku-mobile.webp",
+    screenshotAlt: "Shikaku: Puzzle Quest game menu with play and battle-arena options",
   },
   {
     name: "NumNinja",
@@ -197,6 +215,9 @@ export const projects: Project[] = [
     tags: ["Game", "Auth", "Progressive Difficulty", "Quick Play"],
     metrics: ["Guest & Registered", "Level Progression"],
     color: "#60a5fa",
+    screenshotDesktop: "/projects/numninja-desktop.webp",
+    screenshotMobile: "/projects/numninja-mobile.webp",
+    screenshotAlt: "NumNinja number-guessing game in active play with score and guess panel",
   },
 ];
 

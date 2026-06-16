@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { featuredProjects, projects } from "@/data/portfolio";
 import FadeIn from "./FadeIn";
+import Lightbox from "./Lightbox";
 
 function CodeIcon({ size = 16 }: { size?: number }) {
   return (
@@ -23,6 +25,8 @@ function CodeIcon({ size = 16 }: { size?: number }) {
 }
 
 export default function Projects() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <section
       id="projects"
@@ -140,6 +144,26 @@ export default function Projects() {
           {projects.map((project, index) => (
             <FadeIn key={project.name} delay={0.1 * index}>
               <article className="group flex flex-col h-full rounded-lg bg-[#10151d] border border-[#2a3441]/50 hover:border-[#c9a45e]/30 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(index)}
+                  aria-label={`View ${project.name} screenshots`}
+                  className="group/thumb relative block w-full aspect-[16/10] overflow-hidden bg-[#0b1018] focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#c9a45e]"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={project.screenshotDesktop}
+                    alt={project.screenshotAlt}
+                    width={1280}
+                    height={800}
+                    loading="lazy"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover/thumb:scale-105"
+                  />
+                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b1018]/50 to-transparent opacity-0 group-hover/thumb:opacity-100 transition-opacity duration-300" />
+                  <span className="pointer-events-none absolute bottom-2 right-2 px-2 py-1 rounded-md text-[10px] font-semibold bg-black/60 text-[#f4efe6] opacity-0 group-hover/thumb:opacity-100 transition-opacity duration-300">
+                    Click to expand
+                  </span>
+                </button>
                 <div className="p-6 flex-1">
                   <div className="flex items-start justify-between mb-4">
                     <div
@@ -214,6 +238,13 @@ export default function Projects() {
             </FadeIn>
           ))}
         </div>
+
+        {openIndex !== null && (
+          <Lightbox
+            project={projects[openIndex]}
+            onClose={() => setOpenIndex(null)}
+          />
+        )}
       </div>
     </section>
   );

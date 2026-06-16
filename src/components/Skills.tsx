@@ -24,7 +24,7 @@ const technicalSkills = [
   },
   {
     name: "AI & Tooling",
-    skills: ["Generative AI Integration", "Structured Prompting", "AI Governance (ISO 42001)", "Prompt Injection Awareness"],
+    skills: ["Generative AI Integration", "Structured Prompting", "Claude", "ChatGPT", "GitHub Copilot", "AI Governance (ISO 42001)", "Prompt Injection Awareness"],
   },
 ];
 
