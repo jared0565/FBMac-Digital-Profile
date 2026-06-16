@@ -90,6 +90,7 @@ export const featuredProjects: FeaturedProject[] = [
     solution:
       "A single platform: an embeddable AI chatbot widget that captures leads from any website, a full CRM pipeline to manage them, and a pay-per-lead overflow model so businesses start free and only pay as they grow.",
     technical: [
+      "Multi-tenant SaaS architecture",
       "React 18 + Base44 serverless (Deno)",
       "Embeddable JS chatbot widget",
       "Stripe subscriptions + pay-per-lead billing",
@@ -142,7 +143,7 @@ export const projects: Project[] = [
     description:
       "A full-stack CRM for small businesses and freelancers combining an embeddable AI chatbot widget (single script tag, no developer needed) with a Kanban deal pipeline, contact management, autoresponder email sequences, and Stripe-powered tiered billing. Leads above the plan limit enter an overflow queue with a pay-per-lead unlock model. Built on React 18, Base44 serverless (Deno), with OpenRouter, Claude, and Gemini powering the chat AI.",
     icon: Users,
-    tags: ["CRM", "AI Chatbot", "SaaS", "Lead Capture"],
+    tags: ["Multi-tenant", "CRM", "AI Chatbot", "Lead Capture"],
     metrics: ["Free Tier", "Pay-Per-Lead"],
     color: "#6bc7c4",
     screenshotDesktop: "/projects/bytescrm-desktop.webp",
@@ -249,7 +250,7 @@ export const processCaseStudies: CaseStudy[] = [
       },
       {
         heading: "Architecture Decision",
-        body: "React 18 frontend with Base44 (Deno-based serverless) for the backend and entity store. Stripe for subscriptions and per-lead payments. Resend for transactional email. OpenRouter with Claude and Gemini powering the chatbot AI. The chatbot ships as a standalone embeddable JS widget, separate from the main app bundle.",
+        body: "Multi-tenant SaaS: each business account has isolated data, its own chatbot configuration, and independent billing. React 18 frontend, Base44 (Deno-based serverless) for the backend and entity store, Stripe for subscriptions and per-lead payments, Resend for transactional email, OpenRouter with Claude and Gemini powering the chatbot AI. The chatbot ships as a standalone embeddable JS widget, separate from the main app bundle.",
       },
       {
         heading: "AI-Assisted Implementation",
