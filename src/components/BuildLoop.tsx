@@ -3,7 +3,7 @@
 import { ArrowDown, RotateCcw } from "lucide-react";
 
 /**
- * Human-led, AI-assisted build loop — an accessible inline SVG workflow diagram.
+ * Human-led, AI-assisted build loop: an accessible inline SVG workflow diagram.
  * Scales with its container; on narrow screens the wrapper scrolls horizontally
  * so labels stay legible rather than shrinking. Responsible-AI controls are
  * listed as real text below the figure for accessibility.
@@ -113,7 +113,7 @@ export default function BuildLoop() {
           {/* test fail → spec gap: Test & Verify -> PRD / Spec */}
           {/* leg 1: exit straight down (offset 10px right to separate from bug-fix exit) */}
           <line x1="803" y1="370" x2="803" y2="458" stroke="#7c8696" strokeWidth="2" strokeDasharray="5 5" />
-          {/* leg 2: go left — arrowhead points toward PRD */}
+          {/* leg 2: go left, arrowhead points toward PRD */}
           <line x1="803" y1="458" x2="50" y2="458" stroke="#7c8696" strokeWidth="2" strokeDasharray="5 5" markerEnd="url(#bl-arrow-muted)" />
           <text x="426" y="451" fill="#7c8696" fontSize="12" fontWeight="600" textAnchor="middle">spec gap</text>
           {/* leg 3: enter PRD / Spec from below */}
@@ -150,7 +150,7 @@ export default function BuildLoop() {
         </svg>
       </div>
 
-      {/* Mobile: vertical stacked flow — whole loop visible, no horizontal scroll */}
+      {/* Mobile: vertical stacked flow, whole loop visible, no horizontal scroll */}
       <ol
         className="md:hidden list-none m-0 p-4 rounded-lg border border-[#2a3441]/50 bg-[#0b1018]"
         aria-label="Build loop steps"
