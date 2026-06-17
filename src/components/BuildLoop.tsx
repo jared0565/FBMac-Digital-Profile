@@ -30,7 +30,7 @@ export default function BuildLoop() {
 
       <div className="hidden md:block overflow-x-auto rounded-lg border border-[#2a3441]/50 bg-[#0b1018] p-4 sm:p-6">
         <svg
-          viewBox="0 0 920 430"
+          viewBox="0 0 920 490"
           className="w-full h-auto min-w-[620px]"
           role="img"
           aria-labelledby="buildloop-svgtitle buildloop-svgdesc"
@@ -41,7 +41,9 @@ export default function BuildLoop() {
             A cycle: a PRD/spec feeds an AI-assisted build, which goes to a human
             review and approval gate. Approved work proceeds to test and verify,
             then ships; the cycle then iterates back to the next spec. Rejected
-            work returns to the AI-assisted build for revision. Input validation,
+            work at human review returns to the AI-assisted build for revision.
+            Failed tests loop back to the AI-assisted build for a bug fix, or all
+            the way back to the PRD if a spec gap is discovered. Input validation,
             output verification, least-privilege controls and a human in the loop
             apply throughout.
           </desc>
@@ -100,6 +102,27 @@ export default function BuildLoop() {
             markerEnd="url(#bl-arrow-muted)"
           />
           <text x="629" y="20" fill="#7c8696" fontSize="13" fontWeight="600" textAnchor="middle">revise</text>
+
+          {/* test fail: Test & Verify -> AI-Assisted Build (bug fix) */}
+          <path
+            d="M798,370 L798,420 Q798,428 791,428 L469,428 Q462,428 462,420 L462,142"
+            fill="none"
+            stroke="#7c8696"
+            strokeWidth="2"
+            strokeDasharray="5 5"
+            markerEnd="url(#bl-arrow-muted)"
+          />
+          <text x="630" y="421" fill="#7c8696" fontSize="12" fontWeight="600" textAnchor="middle">bug fix</text>
+          {/* test fail: Test & Verify -> PRD / Spec (spec gap) */}
+          <path
+            d="M798,370 L798,452 Q798,462 791,462 L57,462 Q50,462 50,452 L50,142"
+            fill="none"
+            stroke="#7c8696"
+            strokeWidth="2"
+            strokeDasharray="5 5"
+            markerEnd="url(#bl-arrow-muted)"
+          />
+          <text x="420" y="455" fill="#7c8696" fontSize="12" fontWeight="600" textAnchor="middle">spec gap</text>
 
           {/* ---- nodes ---- */}
           {/* N1 PRD / Spec (human) */}
@@ -172,6 +195,12 @@ export default function BuildLoop() {
         </li>
         <li className="rounded-lg bg-[#10151d] border border-[#2a3441] p-3 text-center">
           <p className="font-bold text-[#f4efe6]">Test &amp; Verify</p>
+          <p className="mt-2 inline-flex items-center gap-1 text-[11px] text-[#7c8696]">
+            <RotateCcw className="w-3 h-3" /> bug fix → revise build
+          </p>
+          <p className="mt-1 inline-flex items-center gap-1 text-[11px] text-[#7c8696]">
+            <RotateCcw className="w-3 h-3" /> spec gap → back to PRD
+          </p>
         </li>
         <li className="flex justify-center py-1.5" aria-hidden="true">
           <ArrowDown className="w-5 h-5 text-[#c9a45e]" />
