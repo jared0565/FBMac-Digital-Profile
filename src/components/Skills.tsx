@@ -24,7 +24,7 @@ const technicalSkills = [
   },
   {
     name: "AI & Tooling",
-    skills: ["Generative AI Integration", "Structured Prompting", "Claude", "ChatGPT", "GitHub Copilot", "AI Governance (ISO 42001)", "Prompt Injection Awareness"],
+    skills: ["Generative AI Integration", "Structured Prompting", "Claude", "ChatGPT", "Gemini", "GitHub Copilot", "Ollama", "AI Governance (ISO 42001)"],
   },
 ];
 
@@ -35,7 +35,7 @@ const professionalSkills = [
   },
   {
     name: "Responsible AI",
-    skills: ["Input Validation", "Human Approval Gates", "Output Verification", "Context Engineering", "Hallucination Awareness"],
+    skills: ["Input Validation", "Prompt Injection Awareness", "Human Approval Gates", "Output Verification", "Context Engineering", "Hallucination Awareness"],
   },
   {
     name: "Operations & Commercial",
