@@ -111,13 +111,15 @@ export const featuredProjects: FeaturedProject[] = [
     solution:
       "A two-repo system: a Shopify Liquid theme that captures visitor demand via search backfill and ghost cards, paired with PawScout, a Cloudflare Worker that runs LLM quality gates, vision-vets images, and auto-imports products the moment a real visitor shows interest.",
     technical: [
-      "Shopify Liquid theme + App Proxy",
-      "Cloudflare Worker (PawScout)",
+      "Shopify Liquid theme + Shopify App Proxy",
+      "Hono API on Cloudflare Worker + D1",
       "LLM quality gates + vision-vetted images",
-      "Import-on-first-interest pipeline",
+      "Import-on-first-interest pipeline + 30-day performance cull",
+      "AES-256-GCM envelope encryption, crypto-shredding on uninstall",
+      "146 Vitest tests in real workerd (no network mocks)",
     ],
     decision:
-      "Built on Shopify App Proxy so PawScout can fail completely without breaking the store; all calls degrade to no-ops. The theme is deliberately stateless on quality; all intelligence lives in the worker.",
+      "Built on Shopify App Proxy so PawScout can fail completely without breaking the store; all calls degrade gracefully. The theme is stateless; all intelligence lives in the worker. Searches and previews serve from a pre-warmed warehouse with zero CJ API calls on the request path.",
   },
 ];
 export const projects: Project[] = [
@@ -157,7 +159,7 @@ export const projects: Project[] = [
     github: null,
     tagline: "Shopify Liquid Theme: Demand-Driven Catalogue with AI Import Pipeline",
     description:
-      "A demand-driven Shopify Liquid theme where the catalogue self-manages: no manual product listings. When Shopify returns fewer than 12 search results, the theme calls PawScout (a Cloudflare Worker) and fills the grid with quality-gated ghost cards sourced live from suppliers. Clicking a ghost card opens an instant preview modal while PawScout imports the product in the background; when ready, the CTA flips from 'View details' to 'Add to cart'. Performance beacons track real human engagement; products with no activity in 30 days are auto-archived. Orders trigger automated CJ fulfilment with tracking written back to Shopify. Degrades gracefully via App Proxy if PawScout is unavailable.",
+      "A demand-driven Shopify Liquid theme where the catalogue self-manages via PawScout (Hono on Cloudflare Worker + D1). When Shopify returns fewer than 12 results, PawScout fills the grid from a pre-warmed, quality-gated warehouse with zero CJ API calls on the request path. Clicking a ghost card opens an instant preview modal while PawScout imports the product in the background; when ready, the CTA flips from 'View details' to 'Add to cart'. Products with no engagement in 30 days are auto-archived; orders trigger automated CJ fulfilment with tracking written to Shopify. Merchant credentials use AES-256-GCM envelope encryption with crypto-shredding on uninstall. Backed by 146 Vitest tests running inside real workerd.",
     icon: ShoppingBag,
     tags: ["Shopify Liquid", "Demand-Driven", "Cloudflare Worker", "App Proxy"],
     metrics: ["Ghost Card Backfill", "Auto Fulfilment"],
@@ -285,7 +287,7 @@ export const processCaseStudies: CaseStudy[] = [
       },
       {
         heading: "Architecture Decision",
-        body: "Two-repo system: Shopify Liquid theme as the demand surface, PawScout Cloudflare Worker as the intelligence layer. All supplier calls, quality gates, pricing, and import logic live in the worker; the theme is stateless. Shopify App Proxy used throughout so PawScout outages degrade gracefully to standard search.",
+        body: "Two-repo system: Shopify Liquid theme as the demand surface, PawScout (Hono on Cloudflare Worker + D1) as the intelligence layer. All supplier calls, quality gates, pricing, and import logic live in the worker; the theme is stateless. Shopify App Proxy used throughout so PawScout outages degrade gracefully to standard search. Merchant credentials use AES-256-GCM envelope encryption (per-tenant DEK, crypto-shredding on uninstall). Tenant isolation enforced architecturally: only a single module may touch D1, verified by a guard test that fails the build if violated.",
       },
       {
         heading: "AI Integration",
