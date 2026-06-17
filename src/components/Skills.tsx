@@ -12,6 +12,7 @@ const technicalSkills = [
       "REST API integration concepts",
       "Tailwind CSS UI iteration",
       "AI-assisted debugging and review",
+      "Visual Studio",
     ],
   },
   {
@@ -24,7 +25,7 @@ const technicalSkills = [
   },
   {
     name: "AI & Tooling",
-    skills: ["Claude", "ChatGPT", "Gemini", "GitHub Copilot", "Ollama", "Cursor", "Base44", "AntiGravity", "Visual Studio"],
+    skills: ["Claude", "ChatGPT", "Gemini", "GitHub Copilot", "Ollama", "Cursor", "Base44", "AntiGravity"],
   },
 ];
 
