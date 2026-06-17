@@ -91,10 +91,11 @@ export const featuredProjects: FeaturedProject[] = [
       "A single platform: an embeddable AI chatbot widget that captures leads from any website, a full CRM pipeline to manage them, and a pay-per-lead overflow model so businesses start free and only pay as they grow.",
     technical: [
       "Multi-tenant SaaS architecture",
-      "React 18 + Base44 serverless (Deno)",
-      "Embeddable JS chatbot widget",
+      "React 18 + shadcn/ui + Base44 serverless (Deno)",
+      "Embeddable JS chatbot widget (GDPR-compliant)",
       "Stripe subscriptions + pay-per-lead billing",
       "OpenRouter / Claude / Gemini AI",
+      "Lead attribution engine (UTM, GA4, Google Ads, Meta Pixel)",
     ],
     decision:
       "The overflow lead model was a deliberate product decision: leads above the plan limit are locked behind a one-time unlock payment rather than lost or auto-billed. This kept the free tier genuinely useful while creating a natural, low-friction upsell path.",
@@ -141,7 +142,7 @@ export const projects: Project[] = [
     github: null,
     tagline: "AI-Powered CRM with Embeddable Chatbot Widget",
     description:
-      "A full-stack CRM for small businesses and freelancers combining an embeddable AI chatbot widget (single script tag, no developer needed) with a Kanban deal pipeline, contact management, autoresponder email sequences, and Stripe-powered tiered billing. Leads above the plan limit enter an overflow queue with a pay-per-lead unlock model. Built on React 18, Base44 serverless (Deno), with OpenRouter, Claude, and Gemini powering the chat AI.",
+      "A full-stack multi-tenant CRM for small businesses and freelancers: an embeddable AI chatbot widget (single script tag, GDPR-compliant with cookie consent) captures leads from any website; a Kanban pipeline, contact management, autoresponder sequences, and Gmail reply tracking manage them. Leads above plan limit enter an overflow queue with a one-time pay-per-lead unlock. Built on React 18, shadcn/ui, TanStack Query v5, Base44 serverless (Deno, ~78 functions), with Stripe, Resend, and OpenRouter (Claude + Gemini). Attribution engine ties leads back to UTM parameters, Google Ads click IDs, and Meta Pixel events.",
     icon: Users,
     tags: ["Multi-tenant", "CRM", "AI Chatbot", "Lead Capture"],
     metrics: ["Free Tier", "Pay-Per-Lead"],
