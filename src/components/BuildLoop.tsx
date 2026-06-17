@@ -38,14 +38,14 @@ export default function BuildLoop() {
         >
           <title id="buildloop-svgtitle">Human-led, AI-assisted build loop</title>
           <desc id="buildloop-svgdesc">
-            A cycle: a PRD/spec feeds an AI-assisted build, which goes to a human
-            review and approval gate. Approved work proceeds to test and verify,
-            then ships; the cycle then iterates back to the next spec. Rejected
-            work at human review returns to the AI-assisted build for revision.
-            Failed tests loop back to the AI-assisted build for a bug fix, or all
-            the way back to the PRD if a spec gap is discovered. Input validation,
-            output verification, least-privilege controls and a human in the loop
-            apply throughout.
+            A cycle: a PRD/spec feeds an AI-assisted build, which is submitted to
+            a human review and approval gate. Approved work proceeds to test and
+            verify, then ships. After shipping, a production bug fix loops back to
+            the AI-assisted build; a post-test spec gap loops all the way back to
+            the PRD. Rejected work at human review returns for revision. The cycle
+            then iterates back to the next spec. Input validation, output
+            verification, least-privilege controls and a human in the loop apply
+            throughout.
           </desc>
 
           <defs>
@@ -106,14 +106,9 @@ export default function BuildLoop() {
           />
           <text x="629" y="20" fill="#7c8696" fontSize="13" fontWeight="600" textAnchor="middle">revise</text>
 
-          {/* test fail → bug fix: Test & Verify -> AI-Assisted Build */}
-          {/* leg 1: exit straight down from Test & Verify */}
-          <line x1="793" y1="370" x2="793" y2="428" stroke="#7c8696" strokeWidth="2" strokeDasharray="5 5" />
-          {/* leg 2: go left — arrowhead points toward AI Build */}
-          <line x1="793" y1="428" x2="462" y2="428" stroke="#7c8696" strokeWidth="2" strokeDasharray="5 5" markerEnd="url(#bl-arrow-muted)" />
-          <text x="629" y="421" fill="#7c8696" fontSize="12" fontWeight="600" textAnchor="middle">bug fix</text>
-          {/* leg 3: enter AI-Assisted Build from below */}
-          <line x1="462" y1="428" x2="462" y2="142" stroke="#7c8696" strokeWidth="2" strokeDasharray="5 5" markerEnd="url(#bl-arrow-muted)" />
+          {/* bug fix: Ship -> AI-Assisted Build (post-ship production bug) */}
+          <line x1="462" y1="302" x2="462" y2="142" stroke="#7c8696" strokeWidth="2" strokeDasharray="5 5" markerEnd="url(#bl-arrow-muted)" />
+          <text x="476" y="226" fill="#7c8696" fontSize="12" fontWeight="600">bug fix</text>
 
           {/* test fail → spec gap: Test & Verify -> PRD / Spec */}
           {/* leg 1: exit straight down (offset 10px right to separate from bug-fix exit) */}
@@ -196,17 +191,18 @@ export default function BuildLoop() {
         <li className="rounded-lg bg-[#10151d] border border-[#2a3441] p-3 text-center">
           <p className="font-bold text-[#f4efe6]">Test &amp; Verify</p>
           <p className="mt-2 inline-flex items-center gap-1 text-[11px] text-[#7c8696]">
-            <RotateCcw className="w-3 h-3" /> bug fix → revise build
-          </p>
-          <p className="mt-1 inline-flex items-center gap-1 text-[11px] text-[#7c8696]">
             <RotateCcw className="w-3 h-3" /> spec gap → back to PRD
           </p>
         </li>
-        <li className="flex justify-center py-1.5" aria-hidden="true">
-          <ArrowDown className="w-5 h-5 text-[#c9a45e]" />
+        <li className="flex items-center justify-center gap-2 py-1.5">
+          <ArrowDown className="w-5 h-5 text-[#c9a45e]" aria-hidden="true" />
+          <span className="text-xs font-semibold text-[#c9a45e]">pass</span>
         </li>
         <li className="rounded-lg bg-[#10151d] border border-[#2a3441] p-3 text-center">
           <p className="font-bold text-[#f4efe6]">Ship</p>
+          <p className="mt-2 inline-flex items-center gap-1 text-[11px] text-[#7c8696]">
+            <RotateCcw className="w-3 h-3" /> bug fix → back to AI Build
+          </p>
         </li>
         <li className="flex items-center justify-center gap-1.5 pt-3 text-xs font-semibold text-[#c9a45e]">
           <RotateCcw className="w-3.5 h-3.5" /> iterate → next PRD / Spec
