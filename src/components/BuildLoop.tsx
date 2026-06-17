@@ -76,16 +76,19 @@ export default function BuildLoop() {
           {/* ---- forward + loop arrows ---- */}
           {/* PRD -> AI build */}
           <line x1="214" y1="108" x2="368" y2="108" stroke="#c9a45e" strokeWidth="2" markerEnd="url(#bl-arrow)" />
+          <text x="291" y="100" fill="#c9a45e" fontSize="12" fontWeight="600" textAnchor="middle">implement</text>
           {/* AI build -> Human review */}
           <line x1="552" y1="108" x2="704" y2="108" stroke="#c9a45e" strokeWidth="2" markerEnd="url(#bl-arrow)" />
+          <text x="628" y="100" fill="#c9a45e" fontSize="12" fontWeight="600" textAnchor="middle">submit</text>
           {/* approve: Human review -> Test (down) */}
           <line x1="798" y1="146" x2="798" y2="300" stroke="#c9a45e" strokeWidth="2" markerEnd="url(#bl-arrow)" />
           <text x="812" y="226" fill="#c9a45e" fontSize="13" fontWeight="600">approve</text>
-          {/* Test -> Ship (left) */}
+          {/* pass: Test -> Ship (left) */}
           <line x1="704" y1="336" x2="552" y2="336" stroke="#c9a45e" strokeWidth="2" markerEnd="url(#bl-arrow)" />
+          <text x="628" y="328" fill="#c9a45e" fontSize="12" fontWeight="600" textAnchor="middle">pass</text>
           {/* iterate: Ship -> PRD (loop back, up-left) */}
           <path
-            d="M368,336 L150,336 Q120,336 120,306 L120,148"
+            d="M368,336 L150,336 Q120,336 120,306 L120,140"
             fill="none"
             stroke="#c9a45e"
             strokeWidth="2"
@@ -103,26 +106,23 @@ export default function BuildLoop() {
           />
           <text x="629" y="20" fill="#7c8696" fontSize="13" fontWeight="600" textAnchor="middle">revise</text>
 
-          {/* test fail: Test & Verify -> AI-Assisted Build (bug fix) */}
-          <path
-            d="M798,370 L798,420 Q798,428 791,428 L469,428 Q462,428 462,420 L462,142"
-            fill="none"
-            stroke="#7c8696"
-            strokeWidth="2"
-            strokeDasharray="5 5"
-            markerEnd="url(#bl-arrow-muted)"
-          />
-          <text x="630" y="421" fill="#7c8696" fontSize="12" fontWeight="600" textAnchor="middle">bug fix</text>
-          {/* test fail: Test & Verify -> PRD / Spec (spec gap) */}
-          <path
-            d="M798,370 L798,452 Q798,462 791,462 L57,462 Q50,462 50,452 L50,142"
-            fill="none"
-            stroke="#7c8696"
-            strokeWidth="2"
-            strokeDasharray="5 5"
-            markerEnd="url(#bl-arrow-muted)"
-          />
-          <text x="420" y="455" fill="#7c8696" fontSize="12" fontWeight="600" textAnchor="middle">spec gap</text>
+          {/* test fail → bug fix: Test & Verify -> AI-Assisted Build */}
+          {/* leg 1: exit straight down from Test & Verify */}
+          <line x1="793" y1="370" x2="793" y2="428" stroke="#7c8696" strokeWidth="2" strokeDasharray="5 5" />
+          {/* leg 2: go left — arrowhead points toward AI Build */}
+          <line x1="793" y1="428" x2="462" y2="428" stroke="#7c8696" strokeWidth="2" strokeDasharray="5 5" markerEnd="url(#bl-arrow-muted)" />
+          <text x="629" y="421" fill="#7c8696" fontSize="12" fontWeight="600" textAnchor="middle">bug fix</text>
+          {/* leg 3: enter AI-Assisted Build from below */}
+          <line x1="462" y1="428" x2="462" y2="142" stroke="#7c8696" strokeWidth="2" strokeDasharray="5 5" markerEnd="url(#bl-arrow-muted)" />
+
+          {/* test fail → spec gap: Test & Verify -> PRD / Spec */}
+          {/* leg 1: exit straight down (offset 10px right to separate from bug-fix exit) */}
+          <line x1="803" y1="370" x2="803" y2="458" stroke="#7c8696" strokeWidth="2" strokeDasharray="5 5" />
+          {/* leg 2: go left — arrowhead points toward PRD */}
+          <line x1="803" y1="458" x2="50" y2="458" stroke="#7c8696" strokeWidth="2" strokeDasharray="5 5" markerEnd="url(#bl-arrow-muted)" />
+          <text x="426" y="451" fill="#7c8696" fontSize="12" fontWeight="600" textAnchor="middle">spec gap</text>
+          {/* leg 3: enter PRD / Spec from below */}
+          <line x1="50" y1="458" x2="50" y2="142" stroke="#7c8696" strokeWidth="2" strokeDasharray="5 5" markerEnd="url(#bl-arrow-muted)" />
 
           {/* ---- nodes ---- */}
           {/* N1 PRD / Spec (human) */}
