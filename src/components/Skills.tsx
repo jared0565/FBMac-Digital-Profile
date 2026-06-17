@@ -24,7 +24,7 @@ const technicalSkills = [
   },
   {
     name: "AI & Tooling",
-    skills: ["Claude", "ChatGPT", "Gemini", "GitHub Copilot", "Ollama"],
+    skills: ["Claude", "ChatGPT", "Gemini", "GitHub Copilot", "Ollama", "Cursor", "Base44", "AntiGravity", "Visual Studio"],
   },
 ];
 
