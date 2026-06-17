@@ -24,18 +24,18 @@ const technicalSkills = [
   },
   {
     name: "AI & Tooling",
-    skills: ["Generative AI Integration", "Structured Prompting", "Claude", "ChatGPT", "Gemini", "GitHub Copilot", "Ollama", "AI Governance (ISO 42001)"],
+    skills: ["Claude", "ChatGPT", "Gemini", "GitHub Copilot", "Ollama"],
   },
 ];
 
 const professionalSkills = [
   {
     name: "Product Development",
-    skills: ["Requirements Definition", "PRD Development", "Workflow Design", "Prompt Engineering", "MVP Scoping", "Feature Prioritisation"],
+    skills: ["Requirements Definition", "PRD Development", "Workflow Design", "Structured Prompting", "MVP Scoping", "Feature Prioritisation"],
   },
   {
     name: "Responsible AI",
-    skills: ["Input Validation", "Prompt Injection Awareness", "Human Approval Gates", "Output Verification", "Context Engineering", "Hallucination Awareness"],
+    skills: ["Input Validation", "Prompt Injection Awareness", "Human Approval Gates", "Output Verification", "Context Engineering", "Hallucination Awareness", "AI Governance (ISO 42001)"],
   },
   {
     name: "Operations & Commercial",
